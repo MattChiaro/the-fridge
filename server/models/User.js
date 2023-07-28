@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const {Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -9,7 +9,10 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: [
+            /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, 
+            "Please enter a valid email"]
     },
     password: {
         type: String,
@@ -29,6 +32,6 @@ UserSchema.methods.isValidPassword = async function(password) {
     return await bcrypt.compare(password, this.password);
 }
 
-const User = mongoose.model('User', UserSchema);
+const User = model('User', UserSchema);
 
 module.exports = User;
