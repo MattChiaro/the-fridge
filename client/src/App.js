@@ -20,7 +20,7 @@ function App() {
 
     <>
     <Router>
-      <Header />
+      {/* <Header /> */}
 
       <Routes>
         <Route 
