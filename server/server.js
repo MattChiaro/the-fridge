@@ -39,6 +39,3 @@ app.get('/', (req, res) => {
 
 // startApolloServer();
 
-
-//basic express server
-app.listen(port, () =>  console.log(`🌍 Now listening on localhost:${port}`));
