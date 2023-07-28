@@ -17,7 +17,13 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    bulletins: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Bulletin'
+        }
+    ]
 });
 
 UserSchema.pre('save', async function(next) {
