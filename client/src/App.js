@@ -14,41 +14,46 @@ import Profile from './pages/profile';
 
 function App() {
   
-  const isMobile = useMediaQuery("(max-width: 768px)");
+//   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  return (
+//   return (
 
-    <>
-    <Router>
-      {/* <Header /> */}
+//     <>
+//     <Router>
+//       {/* <Header /> */}
 
-      <Routes>
-        <Route 
-          path= '/'
-          element = {<h1> Working! </h1>}        
-        />
-        <Route 
-        path = '/calendar'
-        element = {<Calendar/>}
-        />
-        <Route 
-        path = '/post'
-        element = {<Post/>}
-        />
-        <Route 
-        path = '/profile'
-        element = {<Profile/>}
-        />
-    <div className="App">
-      {/* Nav Bar */}
-      <div>
-        <Navbar />
-      </div>
-    </div>
-    </Routes>
-    </Router>
-    </>
-  );
+//       <Routes>
+//         <Route 
+//           path= '/'
+//           element = {<h1> Working! </h1>}        
+//         />
+//         <Route 
+//         path = '/calendar'
+//         element = {<Calendar/>}
+//         />
+//         <Route 
+//         path = '/post'
+//         element = {<Post/>}
+//         />
+//         <Route 
+//         path = '/profile'
+//         element = {<Profile/>}
+//         />
+//     <div className="App">
+//       {/* Nav Bar */}
+//       <div>
+//         <Navbar />
+//       </div>
+//     </div>
+//     </Routes>
+//     </Router>
+//     </>
+//   );
+// }
+
+return (
+  <h1>Working!</h1>
+)
 }
 
 export default App;
