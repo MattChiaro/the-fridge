@@ -1,24 +1,18 @@
-
-import './App.css';
-import logo512 from './logo512.png'
+import "./App.css";
+import useMediaQuery from "./hooks/useMediaQuery";
+import {useEffect, useState} from "react";
+import Navbar from "./components/Navbar";
 
 function App() {
+  
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo512} className="App-logo" alt="logo" />
-        <p>
-          Coming soon
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          How are ya now
-        </a>
-      </header>
+      {/* Nav Bar */}
+      <div>
+        <Navbar />
+      </div>
     </div>
   );
 }
