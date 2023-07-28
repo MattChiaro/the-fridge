@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 //     server.applyMiddleware({ app });
 
 //     db.once('open', () => {
-//         app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}`));
+        app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}`));
 //         console.log(`Use GraphQL at http://localhost:${port}${server.graphqlPath}`);
 //     }
 //     );
@@ -39,6 +39,3 @@ app.get('/', (req, res) => {
 
 // startApolloServer();
 
-
-//basic express server
-app.listen(port, () =>  console.log(`🌍 Now listening on localhost:${port}`));
