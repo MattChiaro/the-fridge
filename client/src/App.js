@@ -37,13 +37,13 @@ function App() {
         path = '/profile'
         element = {<Profile/>}
         />
+    </Routes>
     <div className="App">
       {/* Nav Bar */}
       <div>
         <Navbar />
       </div>
     </div>
-    </Routes>
     </Router>
     </>
   );
