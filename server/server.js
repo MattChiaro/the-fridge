@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const { ApolloServer } = require('apollo-server-express');
+// const { ApolloServer } = require('apollo-server-express');
 
 // const { typeDefs, resolvers } = require('./schema');
-const db = require('./config/connection');
+// const db = require('./config/connection');
 
 const port = process.env.PORT || 3001;
 const app = express();
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 //     server.applyMiddleware({ app });
 
 //     db.once('open', () => {
-//         app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}`));
+        app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}`));
 //         console.log(`Use GraphQL at http://localhost:${port}${server.graphqlPath}`);
 //     }
 //     );
