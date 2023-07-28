@@ -6,6 +6,21 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
+    bulletins: [Bulletin]
+  }
+
+  type Bulletin {
+    _id: ID
+    title: String
+    body: String
+    user: String
+    createdAt: String
+    priority: Boolean
+  }
+
+  type Query {
+    bulletins: [Bulletin]
+    bulletin(_id: ID!): Bulletin
   }
 
   type Query {
