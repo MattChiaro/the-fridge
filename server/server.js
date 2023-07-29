@@ -26,16 +26,16 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 
-// const startApolloServer = async () => {
-//     await server.start();
-//     server.applyMiddleware({ app });
+const startApolloServer = async () => {
+    await server.start();
+    server.applyMiddleware({ app });
 
-//     db.once('open', () => {
+    db.once('open', () => {
         app.listen(port, () => console.log(`🌍 Now listening on localhost:${port}`));
-//         console.log(`Use GraphQL at http://localhost:${port}${server.graphqlPath}`);
-//     }
-//     );
-// };
+        console.log(`Use GraphQL at http://localhost:${port}${server.graphqlPath}`);
+    }
+    );
+};
 
-// startApolloServer();
+startApolloServer();
 
