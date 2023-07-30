@@ -1,21 +1,18 @@
 import "./App.css";
-import {useEffect, useState} from "react";
-import Navbar from "./components/Navbar";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
+import Landing from "./components/Landing";
 
 
 
 function App() {
-  
-
 
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/Home" element={<Home />} />
-        </Routes>
-      </Router>
+      <Landing />
+    
+    
     </div>
   );
 }
