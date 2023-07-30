@@ -32,3 +32,5 @@ module.exports = {
         return jwt.sign({ data: payload }, process.env.JWT_SECRET, { expiresIn: '2h' });
     },
 };
+
+export { authMiddleware, signToken };
