@@ -1,11 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html,
-body,
-#root {
-  height:100%;
-}
-
+.modalLogin {
+    align-items: center;
+    border: black 5px;
+  }
 
