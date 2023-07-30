@@ -18,11 +18,11 @@ function Example() {
 
       <Modal show={show} onHide={handleClose}>
     
-          <Modal.Title>The Fridge</Modal.Title>
+          <Modal.Title className='modalLogin'>The Fridge</Modal.Title>
         <Modal.Body>
           <Form>
             <Form.Group  
-            className="modalLogin mb-3" controlId="exampleForm.ControlInput1">
+            className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
