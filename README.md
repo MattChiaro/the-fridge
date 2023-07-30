@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+## Video Credits
+Cottonbro Studio - https://www.pexels.com/video/hand-drink-mockup-kitchen-4068402/
+Cottonbro Studio - https://www.pexels.com/video/hand-notes-house-letter-4115113/
+Videvo - https://www.videvo.net/video/young-married-couple-inspect-open-door-refrigerator-design-and-quality-before-buying-in-a-consumer-electronics-store/1105168/
+<!-- <a href="https://www.vecteezy.com/video/15470215-man-opens-the-empty-refrigerator-at-night-in-neon-lighting-poverty-and-economic-crisis-concept-no-money-or-food-shooting-from-the-first-person-pov">Man Opens the Empty Refrigerator at night in Neon Lighting. Poverty and Economic Crisis Concept. No Money or Food. Shooting from the First Person. POV Stock Videos by Vecteezy</a> -->
+
+Video by RDNE Stock project: https://www.pexels.com/video/people-inside-food-truck-kitchen-5780031/
+
+Video by RDNE Stock project: https://www.pexels.com/video/man-dusting-refrigerator-and-cabinet-5592554/
+
+Video by RDNE Stock project: https://www.pexels.com/video/a-man-opening-the-refrigerator-5993519/
+
+Video by RDNE Stock project: https://www.pexels.com/video/a-man-opening-the-refrigerator-5993519/
