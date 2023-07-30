@@ -1,4 +1,3 @@
-
 html,
 body,
 #root {
@@ -61,4 +60,8 @@ video {
     padding-top: 10px;
 }
 
+.modalLogin {
+    align-items: center;
+    border: black 5px;
+  }
 

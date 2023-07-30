@@ -1,22 +1,18 @@
-import React from 'react';
+
 import { useState } from 'react';
-import videoBG from '../assets/FridgeLandingShrank.mp4';
-// import logo from '../assets/logo192.png';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-
-const Landing = () => {
-    const [show, setShow] = useState(false);
+function Example() {
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-    return (
-        <div id='videoContainer'>
-            <video src={videoBG} autoPlay loop muted />
-            <Button id='loginBtn' variant="primary" onClick={handleShow}>
+  return (
+    <>
+     <Button variant="primary" onClick={handleShow}>
         Login
       </Button>
 
@@ -57,12 +53,8 @@ const Landing = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-            {/* unable to get image into top right corner. revisit issue later */}
-            {/* <img src={logo} alt="logo" id='landingLogo' /> */}
-           
-        </div>
-    
-    );
+    </>
+  );
 }
 
-export default Landing;
+export default Example;
