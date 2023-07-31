@@ -15,9 +15,10 @@ const Landing = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [validated] = useState(false)
 
   const handleLoginClose = () => setShowLogin(false);
-  const handleSignUpClose = () => {setShowSignUp(false); setShowLogin(false)};
+  const handleSignUpClose = () => { setShowSignUp(false); setShowLogin(false) };
   const handleShowLogin = () => setShowLogin(true);
   const handleShowSignup = () => setShowSignUp(true);
 
@@ -25,16 +26,25 @@ const Landing = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const form = event.currentTarget;
+
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    console.log(formState)
     try {
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
+      console.log(mutationResponse)
       const token = mutationResponse.data.login.token;
+      console.log(token)
 
       Auth.login(token)
 
     } catch (e) {
-      console.log(e);
+      console.log(JSON.stringify(e));
     }
   }
 
@@ -59,12 +69,14 @@ const Landing = () => {
 
           <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
           <Modal.Body>
-            <Form onSubmit={handleFormSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
               <Form.Group
                 className="m-4" controlId="fromEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   type="email"
+                  name='email'
+                  value={formState.email}
                   placeholder="name@example.com"
                   autoFocus
                   onChange={handleChange}
@@ -78,15 +90,18 @@ const Landing = () => {
                 <Form.Control
                   type="password"
                   placeholder="********"
+                  name='password'
+                  value={formState.password}
                   autoFocus
                   onChange={handleChange}
                 />
               </Form.Group>
+              <Button type="submit" variant="secondary">
+                Login
+              </Button>
             </Form>
           </Modal.Body>
-          <Button type="submit" variant="secondary" onClick={handleLoginClose}>
-            Login
-          </Button>
+
           <Modal.Footer className="flex d-flex justify-content-center">
 
             Don't have an account?
@@ -96,7 +111,7 @@ const Landing = () => {
           </Modal.Footer>
         </Modal>
 
-{/* Signup Modal */}
+        {/* Signup Modal */}
         <Modal className="" show={showSignUp} onHide={handleSignUpClose}>
 
           <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
@@ -136,7 +151,7 @@ const Landing = () => {
               </Form.Group>
             </Form>
           </Modal.Body>
-          <Button type="submit" variant="secondary" onClick={handleSignUpClose}>
+          <Button type="submit" variant="secondary">
             Sign Up!
           </Button>
           <Modal.Footer className="flex d-flex justify-content-center">
