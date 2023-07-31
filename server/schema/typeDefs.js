@@ -39,7 +39,7 @@
 
 
 
-// updated with fridge model 
+// updated with fridge model
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
@@ -72,7 +72,7 @@ const typeDefs = gql`
 
   type Fridge {
     _id: ID
-    user: Users
+    user: [User]
     bulletins: [Bulletin]
     calendar: [Event]
   }
