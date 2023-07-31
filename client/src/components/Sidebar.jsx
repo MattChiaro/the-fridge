@@ -22,14 +22,7 @@ const Sidebar = () => {
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
-        <CDBSidebarFooter style={{ textAlign: 'center' }}>
-          <div
-            className="sidebar-btn-wrapper"
-            style={{padding: '20px 5px'}}
-          >
-            Sidebar Footer
-          </div>
-        </CDBSidebarFooter>
+        
       </CDBSidebar>
   );
 };
