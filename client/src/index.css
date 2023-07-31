@@ -1,10 +1,38 @@
 html,
 body,
 #root {
+  height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
 }
+#calComp{
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+#calDiv{
+  display: block;
+  margin: 5%;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+  justify-self: center;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+#calInfo{
+  width: 10%;
+  height: auto;
+  background-color: white;
+}
+
+
 
 .Landing{
   width: 100%;

@@ -3,7 +3,7 @@ import "./App.css";
 import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Calendar from "./pages/calendar";
+import Calendar from "./pages/Cal";
 
 
 // import Landing from "./components/Landing";

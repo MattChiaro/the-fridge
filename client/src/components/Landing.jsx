@@ -40,7 +40,7 @@ const Landing = () => {
             >
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="email"
+                type="password"
                 placeholder="********"
                 autoFocus
               />
