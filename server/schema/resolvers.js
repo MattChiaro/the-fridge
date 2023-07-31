@@ -45,7 +45,7 @@
 const User = require('../models/User');
 const Bulletin = require('../models/Bulletin');
 const Fridge = require('../models/Fridge');
-const Event = require('../models/Event');  // Calendar is referred to as 'Event' in the model
+const Event = require('../models/Calendar'); 
 
 const resolvers = {
   Query : {
