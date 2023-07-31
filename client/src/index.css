@@ -91,7 +91,22 @@ video {
 }
 
 .modalLogin {
-    align-items: center;
-    border: black 5px;
+    text-align: center;
   }
 
+#emailForm {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#passForm {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.gradient-custom {
+  background: linear-gradient(to right, rgb(230, 148, 26),
+          rgb(220, 67, 12), #eed219);
+}

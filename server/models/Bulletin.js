@@ -1,4 +1,5 @@
 const {Schema, model } = require('mongoose');
+const moment = require('moment');
 
 const BulletinSchema = new Schema({
     title: {
@@ -18,7 +19,7 @@ const BulletinSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        get: (timestamp) => dateFormat(timestamp)
+        get: (timestamp) => moment(timestamp).format('YYYY-MM-DD HH:mm:ss'),
     },
     priority: {
         type: Boolean,
