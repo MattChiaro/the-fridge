@@ -56,17 +56,18 @@ video {
 
 #loginBtn{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 10%;
+  right: 2%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
   background-color: #ffffff;
-  color: #000000;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; 
+  background: linear-gradient(to right, rgb(249, 150, 3), #ecda65);
 }
 
 #loginBtn:hover{
@@ -88,23 +89,9 @@ video {
     padding-top: 10px;
 }
 
-.modalLogin {
-    text-align: center;
-  }
-
-#emailForm {
-  text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
+.modal-content {
+  background: linear-gradient(to right, rgb(181, 53, 53),
+          rgb(218, 143, 30), #ead64e);
+  margin-top: 100px;
 }
 
-#passForm {
-  text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.gradient-custom {
-  background: linear-gradient(to right, rgb(230, 148, 26),
-          rgb(220, 67, 12), #eed219);
-}
