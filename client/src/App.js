@@ -3,16 +3,19 @@ import "./App.css";
 import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Calendar from "./pages/calendar";
 
-import Landing from "./components/Landing";
-import Login from './components/Login-Modal';
+
+// import Landing from "./components/Landing";
+// import Login from './components/Login-Modal';
 
 function App() {
 
   return (
     <div className="App">
-      <Landing />
+      {/* <Landing /> */}
     {/* <Login /> */}
+    <Calendar />
     
     </div>
   );
