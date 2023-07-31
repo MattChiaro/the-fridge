@@ -22,6 +22,7 @@
         "@mui/styled-engine-sc": "^5.12.0",
         "axios": "^1.4.0",
         "bcrypt": "^5.1.0",
+        "fullcalendar": "^6.1.8",
         "jsonwebtoken": "^9.0.1",
         "react-router-dom": "^6.14.2"
     }
