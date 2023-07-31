@@ -32,7 +32,9 @@ body,
   background-color: white;
 }
 
-
+#homeSection{
+  height:100vh;
+}
 
 .Landing{
   width: 100%;
