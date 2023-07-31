@@ -4,6 +4,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+import CalPageCard from '../components/calPageCard';
+
 
 const CalendarComponent = () => {
     return(
@@ -20,7 +22,7 @@ const CalendarComponent = () => {
             />
         </div> 
             <div id='calInfo'>
-              
+              <CalPageCard />
             </div>
       </div>
     )

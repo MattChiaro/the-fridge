@@ -1,16 +1,16 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {ApolloProvider, ApolloClient, InMemoryCache} from "@apollo/client";
 
 
 import Calendar from "./pages/Cal";
 
-//components
+// components
 import Landing from "./components/Landing";
 
 
 //pages
-import Home from './pages/home';
+import Home from './pages/Home';
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -35,7 +35,6 @@ function App() {
       </Routes>
     </Router>
     </ApolloProvider>
-    // <Landing />
   );
 }
 
