@@ -44,7 +44,6 @@ const Landing = () => {
                 placeholder="********"
                 autoFocus
               />
-
               <Button id='logInBtn' variant="secondary" className='mt-4 bg-white border-0 text-black' onClick={handleClose}>
                 Login
             </Button>
