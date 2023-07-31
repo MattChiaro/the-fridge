@@ -2,8 +2,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {ApolloProvider, ApolloClient, InMemoryCache} from "@apollo/client";
 
+
+import Calendar from "./pages/Cal";
+
 //components
 import Landing from "./components/Landing";
+
 
 //pages
 import Home from './pages/home';
