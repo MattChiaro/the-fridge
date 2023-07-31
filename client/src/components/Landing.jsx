@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import videoBG from '../assets/FridgeLandingShrank.mp4';
-// import logo from '../assets/logo192.png';
+import logo from '../assets/logo192.png';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -19,27 +19,27 @@ const Landing = () => {
             <Button id='loginBtn' variant="primary" onClick={handleShow}>
         Login
       </Button>
-
-      <Modal show={show} onHide={handleClose}>
+<section className="gradient-custom">
+      <Modal className="" show={show} onHide={handleClose}>
     
-          <Modal.Title className='modalLogin'>The Fridge</Modal.Title>
+          <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
         <Modal.Body>
           <Form>
-            <Form.Group  
-            className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
+            <Form.Group id='emailForm'
+            className="m-4" controlId="exampleForm.ControlInput1">
+              <Form.Label id='email'>Email address</Form.Label>
+              <Form.Control id='emailBox'
                 type="email"
                 placeholder="name@example.com"
                 autoFocus
               />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
+            <Form.Group id='passForm'
+              className="m-4"
               controlId="exampleForm.ControlTextarea1"
             >
-              <Form.Label>Password</Form.Label>
-              <Form.Control
+              <Form.Label id='pass'>Password</Form.Label>
+              <Form.Control id='passBox'
                 type="password"
                 placeholder="********"
                 autoFocus
@@ -48,15 +48,16 @@ const Landing = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button id='logInBtn' variant="secondary" onClick={handleClose}>
             Login
           </Button>
           Don't have an account?
-          <Button variant="primary" onClick={handleClose}>
+          <Button id='signUpBtn' variant="primary" onClick={handleClose}>
             Sign Up
           </Button>
         </Modal.Footer>
       </Modal>
+      </section>
             {/* unable to get image into top right corner. revisit issue later */}
             {/* <img src={logo} alt="logo" id='landingLogo' /> */}
            
