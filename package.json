@@ -23,6 +23,7 @@
         "axios": "^1.4.0",
         "bcrypt": "^5.1.0",
         "jsonwebtoken": "^9.0.1",
+        "moment": "^2.29.4",
         "mongoose": "^7.4.1"
     }
 }
