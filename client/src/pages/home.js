@@ -4,33 +4,33 @@ import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
 import Bulletin from "../components/Bulletin";
 import Sidebar from "../components/Sidebar";
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const Home = () => {
   return (
-
-  <section id="homeSection">
+    <section id="homeSection">
       <Row>
         <NavbarComponent />
-          <Row>
-            <Col style={{width:'10%'}}>
+        <Row>
+          <Col style={{ width: "10%", height: "100%" }}>
             <Sidebar />
-            </Col>
-            <Col>
-              <Row>
-
+          </Col>
+          <Col xs={8}>
+            <Row>
+              <Col>
                 <CalendarCard />
+              </Col>
+              <Col>
                 <Bulletin />
-              </Row>
-            </Col>
-
-
+              </Col>
             </Row>
+            <Row></Row>
+          </Col>
+          <Col></Col>
+        </Row>
       </Row>
-
-  </section>
-
+    </section>
   );
 };
 

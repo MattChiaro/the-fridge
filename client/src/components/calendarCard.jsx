@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 
 function CalendarCard() {
   return (
-    <Card style={{ width: "18rem", height:"20rem" } }>
+    <Card style={{ width: "100%", height:"30rem" } }>
       <Card.Body>
         <Card.Title>Calendar</Card.Title>
         {/* <FullCalendar
