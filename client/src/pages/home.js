@@ -1,15 +1,9 @@
-// import Navbar from '../components/Navbar';
-import CalendarCard from '../components/calendarCard';
+const Home = () => {
+    return (
+        <aside>
 
-function Home() {
-  return (
-    <>
-    <div>
-    {/* <Navbar /> */}
-    <CalendarCard />
-    </div>
-    </>
-  );
+        </aside>
+    )
 }
 
 export default Home;
