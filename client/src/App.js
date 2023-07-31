@@ -1,23 +1,41 @@
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-// import {useEffect, useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {ApolloProvider, ApolloClient, InMemoryCache} from "@apollo/client";
+
 
 import Calendar from "./pages/Cal";
 
-// import Landing from "./components/Landing";
+//components
+import Landing from "./components/Landing";
 
 
+//pages
 import Home from './pages/home';
+
+const client = new ApolloClient({
+  uri: "/graphql",
+  cache: new InMemoryCache(),
+});
+
 
 function App() {
 
   return (
-    <div className="App">
-      {/* <Landing /> */}
-    <Home />
-    
-    </div>
+    <ApolloProvider client={client}>
+    <Router>
+      <Routes>
+        <Route 
+        path="/" 
+        element={<Landing />} 
+        />
+        <Route 
+        path="/home"
+        element={<Home />}
+        />
+      </Routes>
+    </Router>
+    </ApolloProvider>
+    // <Landing />
   );
 }
 
