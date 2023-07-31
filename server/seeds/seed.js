@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const User = require('./models/User');
-const Bulletin = require('./models/Bulletin');
-const Fridge = require('./models/Fridge');
-const Event = require('./models/Calendar');
+const User = require('../models/User');
+const Bulletin = require('../models/Bulletin');
+const Fridge = require('../models/Fridge');
+const Event = require('../models/Calendar');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/the-fridge', {
   useNewUrlParser: true,
