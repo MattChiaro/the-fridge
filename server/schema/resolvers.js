@@ -1,5 +1,6 @@
-// const User = require('../models/User'); // User model may need to be updated
-// const Bulletin = require('../models/Bulletin'); 
+// const User = require('../models/User');
+// const Bulletin = require('../models/Bulletin');
+
 // const resolvers = {
 //   Query : {
 //     users: async () => {
@@ -8,9 +9,6 @@
 //     user: async (_, { _id }) => {
 //       return await User.findById(_id);
 //     },
-//   },
-
-//   Query : {
 //     bulletins: async () => {
 //       return await Bulletin.find({});
 //     },
@@ -18,7 +16,7 @@
 //       return await Bulletin.findById(_id);
 //     },
 //   },
-  
+
 //   Mutation: {
 //     addUser: async (_, { name, email, password }) => {
 //       return await User.create({ name, email, password });
@@ -29,14 +27,25 @@
 //     updateUser: async (_, { _id, name, email, password }) => {
 //       return await User.findByIdAndUpdate(_id, { name, email, password }, { new: true });
 //     },
+
+//     addBulletin: async (_, { title, body, user, priority }) => {
+//       return await Bulletin.create({ title, body, user, priority });
+//     },
+//     editBulletin: async (_, { _id, title, body, user, priority }) => {
+//       return await Bulletin.findByIdAndUpdate(_id, { title, body, user, priority }, { new: true });
+//     },
+//     removeBulletin: async (_, { _id }) => {
+//       return await Bulletin.findByIdAndDelete(_id);
+//     },
 //   },
 // };
 
 // module.exports = resolvers;
 
-// UPDATED CODE
 const User = require('../models/User');
 const Bulletin = require('../models/Bulletin');
+const Fridge = require('../models/Fridge');
+const Event = require('../models/Event');  // Calendar is referred to as 'Event' in the model
 
 const resolvers = {
   Query : {
@@ -51,6 +60,18 @@ const resolvers = {
     },
     bulletin: async (_, { _id }) => {
       return await Bulletin.findById(_id);
+    },
+    events: async () => {
+      return await Event.find({});
+    },
+    event: async (_, { _id }) => {
+      return await Event.findById(_id);
+    },
+    fridges: async () => {
+      return await Fridge.find({}).populate('user bulletins calendar');
+    },
+    fridge: async (_, { _id }) => {
+      return await Fridge.findById(_id).populate('user bulletins calendar');
     },
   },
 
@@ -73,6 +94,23 @@ const resolvers = {
     },
     removeBulletin: async (_, { _id }) => {
       return await Bulletin.findByIdAndDelete(_id);
+    },
+    
+    addEvent: async (_, { start, end, title, update, allday, time }) => {
+      return await Event.create({ start, end, title, update, allday, time });
+    },
+    editEvent: async (_, { _id, start, end, title, update, allday, time }) => {
+      return await Event.findByIdAndUpdate(_id, { start, end, title, update, allday, time }, { new: true });
+    },
+    removeEvent: async (_, { _id }) => {
+      return await Event.findByIdAndDelete(_id);
+    },
+    
+    addFridge: async (_, { user }) => {
+      return await Fridge.create({ user });
+    },
+    removeFridge: async (_, { _id }) => {
+      return await Fridge.findByIdAndDelete(_id);
     },
   },
 };
