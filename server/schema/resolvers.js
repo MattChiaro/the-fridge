@@ -46,6 +46,7 @@ const User = require('../models/User');
 const Bulletin = require('../models/Bulletin');
 const Fridge = require('../models/Fridge');
 const Event = require('../models/Calendar'); 
+const { signToken } = require('../middleware/auth');
 
 const resolvers = {
   Query : {
