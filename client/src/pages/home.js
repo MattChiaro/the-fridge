@@ -12,6 +12,7 @@ import UrgentPosts from "../components/UrgentPosts";
 const Home = () => {
   return (
     <section id="homeSection">
+      <>
       <Row>
         <NavbarComponent />
         <Row >
@@ -39,6 +40,7 @@ const Home = () => {
           <Col></Col>
         </Row>
       </Row>
+      </>
     </section>
   );
 };
