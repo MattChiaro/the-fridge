@@ -1,13 +1,30 @@
-import {useState} from 'react';
-import useMediaQuery from '../hooks/useMediaQuery';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const Navbar = () => {
-    
-    const isMobile = useMediaQuery("(max-width: 768px)");
-
+function Navbar() {
     return(
-        0
-    )
-}
+<Navbar className="bg-body-tertiary justify-content-between">
+<div className='fridgeTitle'>
+   
+</div>
+<Form inline>
+<Row>
+  <Col xs="auto">
+    <Form.Control
+      type="text"
+      placeholder="Search"
+      className=" mr-sm-2"
+    />
+  </Col>
+  <Col xs="auto">
+    <Button type="submit">Submit</Button>
+  </Col>
+</Row>
+</Form>
+</Navbar>
+    );
+    }
 
 export default Navbar;
