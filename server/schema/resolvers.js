@@ -86,6 +86,19 @@ const resolvers = {
       return await User.findByIdAndUpdate(_id, { name, email, password }, { new: true });
     },
 
+    login: async (_, { email, password }) => {
+      const user = await User.findOne({ email });
+      if (!user) {
+        throw new Error('Incorrect email or password');
+      }
+      const correctPw = await user.isValidPassword(password);
+      if (!correctPw) {
+        throw new Error('Incorrect email or password');
+      }
+      const token = signToken(user);
+      return { token, user };
+    },
+
     addBulletin: async (_, { title, body, user, priority }) => {
       return await Bulletin.create({ title, body, user, priority });
     },
