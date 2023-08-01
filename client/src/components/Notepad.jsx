@@ -25,7 +25,12 @@ const Notepad = () => {
     const [bulletin, setBulletin] = useState(false);
     const [urgent, setUrgent] = useState(false);
     const [calendar, setCalendar] = useState(false);
-    const [date, setDate] = useState("");
+    const [allDay, setAllDay] = useState(false);
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+    const [startTime, setStartTime] = useState("");
+    const [endTime, setEndTime] = useState("");
+
 
     const [updated, setUpdated] = useState(message);
 
@@ -52,8 +57,25 @@ const Notepad = () => {
     }
 
     // sets date to user input to be stored in database
-    const handleDate = (e) => {
-        setDate(e.target.value);
+    const handleStartDate = (e) => {
+        setStartDate(e.target.value);
+    }
+
+
+    const handleStartTime = (e) => {
+        setStartTime(e.target.value);
+    }
+
+    const handleEndDate = (e) => {
+        setEndDate(e.target.value);
+    }
+
+    const handleEndTime = (e) => {
+        setEndTime(e.target.value);
+    }
+
+    const handleAllDay = (e) => {
+        setAllDay(!allDay);
     }
 
 
@@ -66,7 +88,10 @@ const Notepad = () => {
         console.log(bulletin + " bulletin");
         console.log(urgent + " urgent");
         console.log(calendar + " calendar");
-        console.log(date + " date");
+        console.log(startDate + " start date");
+        console.log(startTime + " start time");
+        console.log(endDate + " end date");
+        console.log(endTime + " end time");
         // pass data to database 
 
     }
@@ -110,10 +135,22 @@ const Notepad = () => {
 
                         {/* date selector and checkbox to add to calendar */}                        
                         <Form.Label>Enter the date you want to add to the calendar</Form.Label>
+                        {/* destination choices */}
                         <Form.Check type="checkbox" label="Add to Bulletin" onChange={handleSendBull} />
                         <Form.Check type="checkbox" label="Add to Urgent" onChange={handleSendUrg}/>
                         <Form.Check type="checkbox" label="Add to Calendar" onChange={handleSendCal}/>
-                        <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" onChange={handleDate}/>
+                        {/* all day check */}
+                        <Form.Check type="checkbox" label="All Day Event" onChange={handleAllDay}/>
+                        {/* date */}
+
+                        <Form.Label>Enter the start time of the event</Form.Label>
+                        <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" onChange={handleStartDate}/>
+                        <Form.Control type="time" placeholder="Enter time" data-date-format="HH:mm" onChange={handleStartTime}/>
+                        
+                        {/* end date and time */}
+                        <Form.Label>Enter the end date and time of the event</Form.Label>
+                        <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" onChange={handleEndDate}/>
+                        <Form.Control type="time" placeholder="Enter time" data-date-format="HH:mm" onChange={handleEndTime}/>
                         {/* submit button */}
                         <Form.Control type="submit" value="Submit" onClick={handleClick}  />
 
