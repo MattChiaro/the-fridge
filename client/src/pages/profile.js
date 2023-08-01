@@ -1,15 +1,15 @@
 import Icon from '../assets/images.jpg'
 import React from 'react';
-import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBIcon, MDBInputGroup } from 'mdb-react-ui-kit';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBInputGroup } from 'mdb-react-ui-kit';
 import {House} from 'react-bootstrap-icons';
+import {Link} from 'react-router-dom'
+
 
 export default function ProfileStatistics() {
   return (
-    <div className='' style={{ background: '#FFCC80'}}>
-      <div>
-        <MDBBtn outline color='white'>
-          <House size={48} color='white'/>
-        </MDBBtn>
+    <div style={{ background: '#FFCC80'}}>
+      <div  style={{marginLeft: '10px' }}>
+        <Link to='/home'><House size={48} color='white'/></Link>
       </div>
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
@@ -25,8 +25,6 @@ export default function ProfileStatistics() {
                   email
                 </MDBCardText>
                 <MDBInputGroup className='mb-3'>
-        {/* <input className='form-control' type='text' />
-        <MDBBtn color='light' rippleColor='dark'>ADD  CODE</MDBBtn> */}
       </MDBInputGroup>
       <MDBBtn color='light' rippleColor='dark'>
         INVITE
@@ -38,6 +36,67 @@ export default function ProfileStatistics() {
             </MDBCard>
           </MDBCol>
         </MDBRow>
+        
+        <div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
       </MDBContainer>
     </div>
   );
