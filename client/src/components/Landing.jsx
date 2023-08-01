@@ -42,15 +42,11 @@ const Landing = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(LoginFormState)
     try {
       const mutationResponse = await login({
         variables: { email: LoginFormState.email, password: LoginFormState.password },
       });
-      console.log(mutationResponse)
       const token = mutationResponse.data.login.token;
-      console.log(token)
-
       Auth.login(token)
 
     } catch (e) {
@@ -68,14 +64,16 @@ const Landing = () => {
     }
     console.log(SignUpFormState)
     try {
-      const mutationResponse = await addUser({
+      await addUser({
         variables: { name: SignUpFormState.name, email: SignUpFormState.email, password: SignUpFormState.password, fridgeId: SignUpFormState.fridgeId },
       });
-      console.log(mutationResponse)
 
-      const token = mutationResponse.data.addUser.token;
-      console.log(token)
-      // Auth.login(token)
+      // login the user after sucessful signup
+      const mutationResponse = await login({
+        variables: { email: SignUpFormState.email, password: SignUpFormState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token)
 
     } catch (e) {
       console.log(e);
