@@ -1,35 +1,103 @@
-// import { QUERY_USERS_PROFILE } from '../utils/queries';
-// import { useQuery } from '@apollo/client';
-import {Card, Col, Image, Button, Form, InputGroup} from 'react-bootstrap';
-import React from 'react';
 import Icon from '../assets/images.jpg'
+import React from 'react';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBInputGroup } from 'mdb-react-ui-kit';
+import {House} from 'react-bootstrap-icons';
+import {Link} from 'react-router-dom'
 
-function Profile() {
 
-// const [userProfile] = useQuery(QUERY_USERS_PROFILE)
-
+export default function ProfileStatistics() {
   return (
-    <Card style={{ width: '25rem', height: '30rem' }}>
-      <Card.Body className='bg-black border-0 rounded'>
-      <Col>
-          <Image src={Icon} className='col-8 col-lg-8' roundedCircle/>
-        </Col>
-        <Card.Title className='text-white text-center'>NAME</Card.Title>
-        <Card.Subtitle className="mb-5 text-white text-center">Email</Card.Subtitle>
-        <Button variant="outline-light" className='col-md-12  text-right'>INVITE FRIEND</Button>
-        <InputGroup className="mt-4">
-        <Form.Control
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-        <Button variant="outline-light">
-          ADD CODE
-        </Button>
-      </InputGroup>
-      <Button className='mt-5 col-4' variant="outline-light">LOGOUT</Button>
-      </Card.Body>
-    </Card>
+    <div style={{ background: '#FFCC80'}}>
+      <div  style={{marginLeft: '10px' }}>
+        <Link to='/home'><House size={48} color='white'/></Link>
+      </div>
+      <MDBContainer className="container py-5 h-100">
+        <MDBRow className="justify-content-center align-items-center h-100">
+          <MDBCol md="12" xl="4">
+            <MDBCard style={{ borderRadius: '15px' }}>
+              <MDBCardBody className="text-center">
+                <div className="mt-3 mb-4">
+                  <MDBCardImage src={Icon}
+                    className="rounded-circle" fluid style={{ width: '100px' }} />
+                </div>
+                <MDBTypography tag="h4">NAME</MDBTypography>
+                <MDBCardText className="text-muted mb-4">
+                  email
+                </MDBCardText>
+                <MDBInputGroup className='mb-3'>
+      </MDBInputGroup>
+      <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+      <MDBBtn color='light' rippleColor='dark'>
+        LOGOUT
+      </MDBBtn>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+        
+        <div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+<div className="card text-center" style={{ width: "18rem" }}>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <MDBBtn color='light' rippleColor='dark'>
+        INVITE
+      </MDBBtn>
+  </div>
+</div>
+
+      </MDBContainer>
+    </div>
   );
 }
-
-export default Profile;
