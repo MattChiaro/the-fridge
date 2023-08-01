@@ -111,7 +111,7 @@ const Notepad = () => {
                         <Form.Check type="checkbox" label="Add to Bulletin" onChange={handleSendBull} />
                         <Form.Check type="checkbox" label="Add to Urgent" onChange={handleSendUrg}/>
                         <Form.Check type="checkbox" label="Add to Calendar" onChange={handleSendCal}/>
-                        <Form.Control type="date" placeholder="Enter date" onChange={handleDate}/>
+                        <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" onChange={handleDate}/>
                         {/* submit button */}
                         <Form.Control type="submit" value="Submit" onClick={handleClick}  />
 
