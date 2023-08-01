@@ -10,7 +10,7 @@ import Landing from "./components/Landing";
 
 
 //pages
-import Home from './pages/home';
+import Home from './pages/homefurniture';
 
 const client = new ApolloClient({
   uri: "/graphql",
