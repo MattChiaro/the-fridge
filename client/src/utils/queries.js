@@ -49,3 +49,45 @@ query Fridges {
       }
     }
   }`
+
+export const QUERY_BULLETINS = gql`
+query Bulletins {
+    bulletins {
+      title
+      priority
+      createdAt
+      body
+    }
+  }`
+
+export const QUERY_EVENTS = gql`
+query Events {
+    events {
+      start
+      end
+      title
+      update
+      allday
+      time
+    }
+  }`
+
+export const QUERY_FRIDGE = gql`
+query Fridge($id: ID!) {
+    fridge(_id: $id) {
+      user {
+        name
+      }
+      bulletins {
+        user
+        title
+        priority
+        createdAt
+        body
+      }
+    }
+  }`
+
+
+
+
