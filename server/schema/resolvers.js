@@ -33,8 +33,11 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (_, { name, email, password }) => {
-      return await User.create({ name, email, password });
+    addUser: async (_, { name, email, password, fridgeId }) => {
+      if (!fridgeId) {
+        throw new Error('You need a fridge ID!');
+      }
+      return await User.create({ name, email, password, fridgeId })
     },
     deleteUser: async (_, { _id }) => {
       return await User.findByIdAndDelete(_id);
