@@ -2,9 +2,10 @@ import React from 'react';
 import { useState } from 'react';
 import videoBG from '../assets/FridgeLandingShrank.mp4';
 import logo from '../assets/logo192.png';
+import loginLogo from '../assets/logo512login.png';
 import { useMutation } from '@apollo/client';
 
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form, Modal, } from 'react-bootstrap';
 
 import { LOGIN, ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -98,13 +99,17 @@ const Landing = () => {
   };
 
 
-//component return
+  //component return
   return (
     <div id='videoContainer'>
       <video src={videoBG} autoPlay loop muted />
-      <Button id='loginBtn' variant="primary" onClick={handleShowLogin}>
-        Login
-      </Button>
+      <div >
+            <img className="hero-logo" src={loginLogo} onClick={handleShowLogin}></img>
+            <p>Click to Login!</p>
+            {/* <Button id='loginBtn' variant="primary" onClick={handleShowLogin}>
+              Login
+            </Button> */}
+            </div>
       <section className="gradient-custom">
 
         {/* Login Modal */}
@@ -140,9 +145,9 @@ const Landing = () => {
                 />
               </Form.Group>
               <Form.Group className='flex d-flex justify-content-center'>
-              <Button type="submit" variant="secondary">
-                Login
-              </Button>
+                <Button type="submit" variant="secondary">
+                  Login
+                </Button>
               </Form.Group>
             </Form>
           </Modal.Body>
@@ -199,12 +204,12 @@ const Landing = () => {
                   autoFocus
                   onChange={handleSignUpChange}
                 />
-              </Form.Group> 
+              </Form.Group>
               <Form.Group className='flex d-flex justify-content-center'>
-              <Button type="submit" variant="secondary">
-            Sign Up!
-          </Button>
-          </Form.Group>
+                <Button type="submit" variant="secondary">
+                  Sign Up!
+                </Button>
+              </Form.Group>
             </Form>
           </Modal.Body>
         </Modal>
