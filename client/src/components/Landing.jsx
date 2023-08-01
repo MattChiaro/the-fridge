@@ -19,7 +19,7 @@ const Landing = () => {
 
   //form state
   const [LoginFormState, setLoginFormState] = useState({ email: '', password: '' });
-  const [SignUpFormState, setSignUpFormState] = useState({ name: '', email: '', password: '' });
+  const [SignUpFormState, setSignUpFormState] = useState({ name: '', email: '', password: '', fridgeId: '' });
   const [validated] = useState(false)
 
   //modal handlers
@@ -69,11 +69,13 @@ const Landing = () => {
     console.log(SignUpFormState)
     try {
       const mutationResponse = await addUser({
-        variables: { name: SignUpFormState.name, email: SignUpFormState.email, password: SignUpFormState.password },
+        variables: { name: SignUpFormState.name, email: SignUpFormState.email, password: SignUpFormState.password, fridgeId: SignUpFormState.fridgeId },
       });
+      console.log(mutationResponse)
 
       const token = mutationResponse.data.addUser.token;
-      Auth.login(token)
+      console.log(token)
+      // Auth.login(token)
 
     } catch (e) {
       console.log(e);
@@ -201,6 +203,20 @@ const Landing = () => {
                   name='password'
                   value={SignUpFormState.password}
                   placeholder="********"
+                  autoFocus
+                  onChange={handleSignUpChange}
+                />
+              </Form.Group>
+              <Form.Group
+                className="m-4"
+                controlId="formFridgeId"
+              >
+                <Form.Label>Fridge ID code</Form.Label>
+                <Form.Control
+                  type="text"
+                  name='fridgeId'
+                  value={SignUpFormState.fridgeId}
+                  placeholder="6 digit code"
                   autoFocus
                   onChange={handleSignUpChange}
                 />
