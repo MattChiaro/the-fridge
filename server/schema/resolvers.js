@@ -46,6 +46,7 @@ const User = require('../models/User');
 const Bulletin = require('../models/Bulletin');
 const Fridge = require('../models/Fridge');
 const Event = require('../models/Calendar'); 
+const { signToken } = require('../middleware/auth');
 
 const resolvers = {
   Query : {
@@ -84,6 +85,19 @@ const resolvers = {
     },
     updateUser: async (_, { _id, name, email, password }) => {
       return await User.findByIdAndUpdate(_id, { name, email, password }, { new: true });
+    },
+
+    login: async (_, { email, password }) => {
+      const user = await User.findOne({ email });
+      if (!user) {
+        throw new Error('Incorrect email or password');
+      }
+      const correctPw = await user.isValidPassword(password);
+      if (!correctPw) {
+        throw new Error('Incorrect email or password');
+      }
+      const token = signToken(user);
+      return { token, user };
     },
 
     addBulletin: async (_, { title, body, user, priority }) => {

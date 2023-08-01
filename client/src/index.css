@@ -36,10 +36,6 @@ body,
   height:100vh;
 }
 
-.Landing{
-  width: 100%;
-  height: 100vh;
-}
 
 #videoContainer{
   position: absolute;
@@ -56,57 +52,21 @@ video {
   object-fit: cover;
 }
 
-#loginBtn{
+
+.hero-logo {
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  font-size: 5rem;
+
 }
 
-#loginBtn:hover{
-  background-color: #000000;
-  color: #ffffff;
+
+.modal-content {
+  background: linear-gradient(to right, rgb(181, 53, 53),
+          rgb(218, 143, 30), #ead64e);
+  margin-top: 100px;
 }
 
-#loginBtn:active{
-  transform: translate(-50%, -50%) scale(0.9);
-}
-
-#loginLogo{
-  font-size: 25px;
-    opacity: .5;
-    padding-top: 15px;
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    padding-top: 10px;
-}
-
-.modalLogin {
-    text-align: center;
-  }
-
-#emailForm {
-  text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-#passForm {
-  text-align: center;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.gradient-custom {
-  background: linear-gradient(to right, rgb(230, 148, 26),
-          rgb(220, 67, 12), #eed219);
-}
