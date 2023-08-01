@@ -2,11 +2,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {ApolloProvider, ApolloClient, InMemoryCache} from "@apollo/client";
 
-
 import Calendar from "./pages/Cal";
 
 // components
-import Landing from "./components/Landing";
+import Landing from "./components/Landing"
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 //pages
@@ -30,7 +30,11 @@ function App() {
         />
         <Route 
         path="/home"
-        element={<Home />}
+        element={
+          <ProtectedRoute>
+        <Home /> 
+        </ProtectedRoute>
+        }
         />
       </Routes>
     </Router>
