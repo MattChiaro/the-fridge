@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
 import Bulletin from "../components/Bulletin";
 import Sidebar from "../components/Sidebar";
-// import Col from "react-bootstrap/Col";
-// import Row from "react-bootstrap/Row";
 import Notepad from "../components/Notepad";
 import UrgentPosts from "../components/UrgentPosts";
-// import Container from 'react-bootstrap/Container';
 
 import { Container, Col, Row } from "react-bootstrap";
+import Auth from "../utils/auth";
+
+import { useQuery } from "@apollo/client";
+import { QUERY_USERS_PROFILE,  } from "../utils/queries";
+
+
 
 const Home = () => {
+  const { loading, data } = useQuery(QUERY_USERS_PROFILE);
+  const userData = data?.users || [];
+
+  const currentUser = userData.filter((user) => user.email === Auth.getProfile().data.email)[0]
+
+
   return (
     // <section id="homeSection">
       // <Container>
       <>
       <Row>
         <NavbarComponent />
+        <p>Hi, {currentUser.name}!</p>
       </Row>
         <Row >
 
