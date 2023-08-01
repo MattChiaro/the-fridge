@@ -1,22 +1,17 @@
-// const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-// const roomSchema = new mongoose.Schema({
-//     joinCode: {
-//         type: String,
-//         required: true,
-//         unique: true
-//     },
-//     users: [
-//         {
-//             type: mongoose.Schema.Types.ObjectId,
-//             ref: 'User'
-//         }
-//     ]
-//     // Other properties of the room
-//     // e.g. messages: [Message],
-//     // etc.
-// });
+const roomSchema = new Schema({
+  joinCode: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  users: [{
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  }],
+});
 
-// const Room = mongoose.model('Room', roomSchema);
+const Room = model('Room', roomSchema);
 
-// module.exports = Room;
+module.exports = Room;
