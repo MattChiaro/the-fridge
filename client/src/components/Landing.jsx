@@ -110,7 +110,7 @@ const Landing = () => {
         {/* Login Modal */}
         <Modal show={showLogin} onHide={handleLoginClose}>
 
-          <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
+          <Modal.Title className='flex d-flex justify-content-center'><img src={logo} alt="logo" /></Modal.Title>
           <Modal.Body>
             <Form noValidate validated={validated} onSubmit={handleLoginFormSubmit}>
               <Form.Group
@@ -139,9 +139,11 @@ const Landing = () => {
                   onChange={handleLoginChange}
                 />
               </Form.Group>
+              <Form.Group className='flex d-flex justify-content-center'>
               <Button type="submit" variant="secondary">
                 Login
               </Button>
+              </Form.Group>
             </Form>
           </Modal.Body>
 
@@ -157,9 +159,9 @@ const Landing = () => {
         {/* Signup Modal */}
         <Modal show={showSignUp} onHide={handleSignUpClose}>
 
-          <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
-          <Modal.Body>
-            <Form noValidate validated={validated} onSubmit={handleSignUpFormSubmit}>
+          <Modal.Title className='flex d-flex justify-content-center'><img src={logo} alt="logo" /></Modal.Title>
+          <Modal.Body className="mb-3">
+            <Form noValidate validated={validated} onSubmit={handleSignUpFormSubmit} >
               <Form.Group
                 className="m-4" controlId="fromName">
                 <Form.Label>Name</Form.Label>
@@ -198,14 +200,13 @@ const Landing = () => {
                   onChange={handleSignUpChange}
                 />
               </Form.Group> 
+              <Form.Group className='flex d-flex justify-content-center'>
               <Button type="submit" variant="secondary">
             Sign Up!
           </Button>
+          </Form.Group>
             </Form>
           </Modal.Body>
-         
-          <Modal.Footer className="flex d-flex justify-content-center">
-          </Modal.Footer>
         </Modal>
 
       </section>
