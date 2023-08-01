@@ -23,12 +23,15 @@ const { loading, data } = useQuery(QUERY_USERS, {
 
   const user = data?.user || {};
 
+
+
   return (
     // <section id="homeSection">
       // <Container>
       <>
       <Row>
-        <NavbarComponent />
+        <NavbarComponent 
+        />
         <p>Hi, {user.name}</p>
       </Row>
         <Row >
