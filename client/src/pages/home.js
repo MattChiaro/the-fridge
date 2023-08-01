@@ -11,16 +11,17 @@ import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_USERS_PROFILE,  } from "../utils/queries";
+import { QUERY_USERS  } from "../utils/queries";
 
 
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_USERS_PROFILE);
-  const userData = data?.users || [];
 
-  const currentUser = userData.filter((user) => user.email === Auth.getProfile().data.email)[0]
+const { loading, data } = useQuery(QUERY_USERS, {
+  variables: { id: Auth.getProfile().data._id },
+  });
 
+  const user = data?.user || {};
 
   return (
     // <section id="homeSection">
@@ -28,7 +29,7 @@ const Home = () => {
       <>
       <Row>
         <NavbarComponent />
-        <p>Hi, {currentUser.name}!</p>
+        <p>Hi, {user.name}</p>
       </Row>
         <Row >
 
