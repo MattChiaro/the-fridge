@@ -12,20 +12,27 @@ import Auth from '../utils/auth';
 
 const Landing = () => {
 
+  //modal state (show/hide)
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
+
+  //form state
   const [LoginFormState, setLoginFormState] = useState({ email: '', password: '' });
   const [SignUpFormState, setSignUpFormState] = useState({ name: '', email: '', password: '' });
   const [validated] = useState(false)
 
+  //modal handlers
   const handleLoginClose = () => setShowLogin(false);
   const handleSignUpClose = () => { setShowSignUp(false); setShowLogin(false) };
   const handleShowLogin = () => setShowLogin(true);
   const handleShowSignup = () => setShowSignUp(true);
 
+  //mutations
   const [login] = useMutation(LOGIN);
   const [addUser] = useMutation(ADD_USER);
 
+
+  //form submit handlers
   const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -66,13 +73,14 @@ const Landing = () => {
 
       const token = mutationResponse.data.addUser.token;
       Auth.login(token)
-      
+
     } catch (e) {
       console.log(e);
     }
   }
 
 
+  //form change handles 
   const handleLoginChange = (event) => {
     const { name, value } = event.target;
     setLoginFormState({
@@ -89,6 +97,8 @@ const Landing = () => {
     });
   };
 
+
+//component return
   return (
     <div id='videoContainer'>
       <video src={videoBG} autoPlay loop muted />
@@ -199,9 +209,6 @@ const Landing = () => {
         </Modal>
 
       </section>
-      {/* unable to get image into top right corner. revisit issue later */}
-      {/* <img src={logo} alt="logo" id='landingLogo' /> */}
-
     </div>
 
   );
