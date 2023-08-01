@@ -23,7 +23,11 @@ const UserSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Bulletin'
         }
-    ]
+    ],
+    fridgeId: {
+        type: String,
+        required: true
+    }
 });
 
 UserSchema.pre('save', async function(next) {
