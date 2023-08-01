@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import videoBG from '../assets/FridgeLandingShrank.mp4';
 import logo from '../assets/logo192.png';
-import { useQuery, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 
 import { Button, Form, Modal } from 'react-bootstrap';
 
@@ -14,7 +14,8 @@ const Landing = () => {
 
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [LoginFormState, setLoginFormState] = useState({ email: '', password: '' });
+  const [SignUpFormState, setSignUpFormState] = useState({ name: '', email: '', password: '' });
   const [validated] = useState(false)
 
   const handleLoginClose = () => setShowLogin(false);
@@ -22,9 +23,10 @@ const Landing = () => {
   const handleShowLogin = () => setShowLogin(true);
   const handleShowSignup = () => setShowSignUp(true);
 
-  const [login, { loading, data }] = useMutation(LOGIN);
+  const [login] = useMutation(LOGIN);
+  const [addUser] = useMutation(ADD_USER);
 
-  const handleFormSubmit = async (event) => {
+  const handleLoginFormSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
 
@@ -32,10 +34,10 @@ const Landing = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log(formState)
+    console.log(LoginFormState)
     try {
       const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+        variables: { email: LoginFormState.email, password: LoginFormState.password },
       });
       console.log(mutationResponse)
       const token = mutationResponse.data.login.token;
@@ -44,14 +46,41 @@ const Landing = () => {
       Auth.login(token)
 
     } catch (e) {
-      console.log(JSON.stringify(e));
+      console.log(e);
     }
   }
 
-  const handleChange = (event) => {
+  const handleSignUpFormSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    console.log(SignUpFormState)
+    try {
+      const mutationResponse = await addUser({
+        variables: { name: SignUpFormState.name, email: SignUpFormState.email, password: SignUpFormState.password },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+
+  const handleLoginChange = (event) => {
     const { name, value } = event.target;
-    setFormState({
-      ...formState,
+    setLoginFormState({
+      ...LoginFormState,
+      [name]: value,
+    });
+  };
+
+  const handleSignUpChange = (event) => {
+    const { name, value } = event.target;
+    setSignUpFormState({
+      ...SignUpFormState,
       [name]: value,
     });
   };
@@ -65,21 +94,21 @@ const Landing = () => {
       <section className="gradient-custom">
 
         {/* Login Modal */}
-        <Modal className="" show={showLogin} onHide={handleLoginClose}>
+        <Modal show={showLogin} onHide={handleLoginClose}>
 
           <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
           <Modal.Body>
-            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleLoginFormSubmit}>
               <Form.Group
                 className="m-4" controlId="fromEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   type="email"
                   name='email'
-                  value={formState.email}
+                  value={LoginFormState.email}
                   placeholder="name@example.com"
                   autoFocus
-                  onChange={handleChange}
+                  onChange={handleLoginChange}
                 />
               </Form.Group>
               <Form.Group
@@ -91,9 +120,9 @@ const Landing = () => {
                   type="password"
                   placeholder="********"
                   name='password'
-                  value={formState.password}
+                  value={LoginFormState.password}
                   autoFocus
-                  onChange={handleChange}
+                  onChange={handleLoginChange}
                 />
               </Form.Group>
               <Button type="submit" variant="secondary">
@@ -112,19 +141,21 @@ const Landing = () => {
         </Modal>
 
         {/* Signup Modal */}
-        <Modal className="" show={showSignUp} onHide={handleSignUpClose}>
+        <Modal show={showSignUp} onHide={handleSignUpClose}>
 
           <Modal.Title className='modalLogin'><img src={logo} alt="logo" /></Modal.Title>
           <Modal.Body>
-            <Form onSubmit={handleFormSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleSignUpFormSubmit}>
               <Form.Group
-                className="m-4" controlId="fromEmail">
+                className="m-4" controlId="fromName">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
                   type="name"
+                  name='name'
+                  value={SignUpFormState.name}
                   placeholder="Enter your display name"
                   autoFocus
-                  onChange={handleChange}
+                  onChange={handleSignUpChange}
                 />
               </Form.Group>
               <Form.Group
@@ -132,9 +163,11 @@ const Landing = () => {
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   type="email"
+                  name='email'
+                  value={SignUpFormState.email}
                   placeholder="name@example.com"
                   autoFocus
-                  onChange={handleChange}
+                  onChange={handleSignUpChange}
                 />
               </Form.Group>
               <Form.Group
@@ -144,16 +177,19 @@ const Landing = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
+                  name='password'
+                  value={SignUpFormState.password}
                   placeholder="********"
                   autoFocus
-                  onChange={handleChange}
+                  onChange={handleSignUpChange}
                 />
-              </Form.Group>
-            </Form>
-          </Modal.Body>
-          <Button type="submit" variant="secondary">
+              </Form.Group> 
+              <Button type="submit" variant="secondary">
             Sign Up!
           </Button>
+            </Form>
+          </Modal.Body>
+         
           <Modal.Footer className="flex d-flex justify-content-center">
           </Modal.Footer>
         </Modal>
