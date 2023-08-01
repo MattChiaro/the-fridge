@@ -63,6 +63,10 @@ const Landing = () => {
       const mutationResponse = await addUser({
         variables: { name: SignUpFormState.name, email: SignUpFormState.email, password: SignUpFormState.password },
       });
+
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token)
+      
     } catch (e) {
       console.log(e);
     }
