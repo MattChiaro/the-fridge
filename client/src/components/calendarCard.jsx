@@ -36,11 +36,11 @@ function CalendarCard() {
       //   }
       // ]
 
-  function addEvent(title, start, end, description) {
+  function addEvent(title, date, description) {
         events.push({
           title: title,
-          start: start,
-          end: end,
+          start: date,
+          end: date,
           description: description,
         })
       }

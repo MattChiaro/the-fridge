@@ -67,6 +67,8 @@ const Notepad = () => {
         console.log(urgent + " urgent");
         console.log(calendar + " calendar");
         console.log(date + " date");
+        // pass data to database 
+
     }
     
     return (
