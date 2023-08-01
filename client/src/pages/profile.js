@@ -29,7 +29,7 @@ export default function ProfileStatistics() {
       <MDBBtn color='light' rippleColor='dark'>
         INVITE
       </MDBBtn>
-      <MDBBtn color='light' rippleColor='dark'>
+      <MDBBtn href='/' color='light' rippleColor='dark'>
         LOGOUT
       </MDBBtn>
               </MDBCardBody>
