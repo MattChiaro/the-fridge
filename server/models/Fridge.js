@@ -20,7 +20,11 @@ const FridgeSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Event'  // Note that the model name for Calendar is 'Event'
         }
-    ]
+    ],
+    fridgeId: {
+        type: String,
+        required: true
+    }
 });
 
 const Fridge = model('Fridge', FridgeSchema);
