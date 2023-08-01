@@ -110,7 +110,6 @@ const Landing = () => {
               Login
             </Button> */}
             </div>
-      <section className="gradient-custom">
 
         {/* Login Modal */}
         <Modal show={showLogin} onHide={handleLoginClose}>
@@ -227,8 +226,6 @@ const Landing = () => {
             </Form>
           </Modal.Body>
         </Modal>
-
-      </section>
     </div>
 
   );
