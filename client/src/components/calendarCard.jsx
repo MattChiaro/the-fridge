@@ -3,22 +3,32 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
+import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
+
+
+
 
 
 
 function CalendarCard() {
   return (
-    <Card style={{ width: "100%", height:"100%", margin:'1em' }} >
-      <Card.Body style={{height:"100%"}}>
+    <Card 
+    // style={{ width: "100%", height:"100%", margin:'1em' }} 
+    >
+      <Card.Body 
+      // style={{height:"100%"}}
+      >
         <Card.Title style={{textAlign:"center"}}>Calendar</Card.Title>
         {/* fullcalendar display */}
         <FullCalendar
-          plugins={[ dayGridPlugin ]}
+          plugins={[ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ]}
           initialView="dayGridMonth"
           headerToolbar={{
             start: "prev,next",
             center: "title",
-            end: ""
+            end: "dayGridMonth timeGridWeek"
           }}
         />
       </Card.Body>
