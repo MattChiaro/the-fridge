@@ -7,9 +7,24 @@ import Navbar from "react-bootstrap/Navbar"
 const NavbarComponent = () => {
   return (
     <>
-    <Navbar className="bg-body-tertiary justify-content-between">
+    <Navbar className="p-2 bg-body-tertiary justify-content-between">
+      <img src={require("../assets/logo192inline.png")} alt="logo" />
       <div className="fridgeTitle"></div>
-      <Form inline>
+      <Form >
+        <Row>
+          <Col xs="auto">
+            
+          </Col>
+          <Col xs="auto">
+            
+          </Col>
+        </Row>
+      </Form>
+    </Navbar>
+    <Navbar className="p-2 bg-body-tertiary justify-content-between">
+     
+      <div className="fridgeTitle"></div>
+      <Form >
         <Row>
           <Col xs="auto">
             <Form.Control

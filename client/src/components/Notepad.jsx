@@ -10,7 +10,9 @@ const Notepad = () => {
     // display inputs on bulletin board
     // allows user to add to calendar if they want
     return (
-        <Card style={{ width: "100%",height:"30rem", margin:'1em' }}>
+        <Card 
+        // style={{ width: "100%",height:"30rem", margin:'1em' }}
+        >
             <Card.Body>
                 <Card.Title>Notepad</Card.Title>
                 <Form>

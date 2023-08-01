@@ -4,22 +4,35 @@ import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
 import Bulletin from "../components/Bulletin";
 import Sidebar from "../components/Sidebar";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
 import Notepad from "../components/Notepad";
 import UrgentPosts from "../components/UrgentPosts";
+// import Container from 'react-bootstrap/Container';
+
+import { Container, Col, Row } from "react-bootstrap";
 
 const Home = () => {
   return (
-    <section id="homeSection">
+    // <section id="homeSection">
+      // <Container>
       <>
       <Row>
         <NavbarComponent />
+      </Row>
         <Row >
-          <Col style={{ width: "10%", height: "100%" }}>
+
+        {/* Column 1 */}
+          <Col className="col-12 col-lg-2"  
+          // style={{ width: "10%", height: "100%" }}
+          >
             <Sidebar />
           </Col>
-          <Col xs={8}>
+
+          {/* Column 2 */}
+          <Col className="col-12 col-lg-8"
+          // xs={8}
+          >
             <Row>
               <Col>
                 <CalendarCard />
@@ -37,11 +50,14 @@ const Home = () => {
               </Col>
             </Row>
           </Col>
-          <Col></Col>
+
+          {/* Column 3 */}
+          <Col className="col-12 col-lg-2"
+          ></Col>
         </Row>
-      </Row>
-      </>
-    </section>
+        </>
+      // </Container>
+    // </section>
   );
 };
 
