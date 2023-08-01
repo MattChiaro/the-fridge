@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     password: String
     bulletins: [Bulletin]
+    fridgeId: String
   }
 
   type Auth {
@@ -38,6 +39,7 @@ const typeDefs = gql`
     user: [User]
     bulletins: [Bulletin]
     calendar: [Event]
+    fridgeId: String
   }
 
   type Query {
@@ -55,6 +57,7 @@ const typeDefs = gql`
     addUser(name: String!, email: String!, password: String!): Auth
     deleteUser(_id: ID!): User
     updateUser(_id: ID!, name: String, email: String, password: String): User
+    
     login(email: String!, password: String!): Auth
 
 

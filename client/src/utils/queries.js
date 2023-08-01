@@ -1,4 +1,5 @@
 import {gql} from '@apollo/client';
+import Auth from './auth';
 
 export const QUERY_USERS_LOGIN = gql`
 query Users {
@@ -25,6 +26,13 @@ query Users {
       }
     }
   }`
+
+export const QUERY_USERS = gql`
+query User($id: ID!) {
+  user(_id: $id) {
+    name
+  }
+}`
 
 export const QUERY_FRIDGES = gql`
 query Fridges {
