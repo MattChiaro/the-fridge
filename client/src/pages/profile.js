@@ -12,7 +12,7 @@ function Profile() {
     <Card style={{ width: '25rem', height: '30rem' }}>
       <Card.Body className='bg-black border-0 rounded'>
       <Col>
-          <Image src={Icon} roundedCircle/>
+          <Image src={Icon} className='col-8 col-lg-8' roundedCircle/>
         </Col>
         <Card.Title className='text-white text-center'>NAME</Card.Title>
         <Card.Subtitle className="mb-5 text-white text-center">Email</Card.Subtitle>
@@ -26,7 +26,7 @@ function Profile() {
           ADD CODE
         </Button>
       </InputGroup>
-      <Button className='mt-5 d-flex justify-content-center' variant="outline-light">LOGOUT</Button>
+      <Button className='mt-5 col-4' variant="outline-light">LOGOUT</Button>
       </Card.Body>
     </Card>
   );
