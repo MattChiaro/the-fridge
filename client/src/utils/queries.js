@@ -41,3 +41,13 @@ query Fridges {
       }
     }
   }`
+
+export const QUERY_BULLETINS = gql`
+query Bulletins {
+    bulletins {
+      title
+      priority
+      createdAt
+      body
+    }
+  }`
