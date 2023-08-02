@@ -8,7 +8,7 @@ import React from 'react';
 //   CDBSidebarFooter,
 // } from 'cdbreact';
 
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+// import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
@@ -63,7 +63,7 @@ const Sidebar = () => {
               />
             </Col>
             <Col xs="auto">
-              <Button type="submit">Search</Button>
+              <Button type="submit" variant="dark">Search</Button>
             </Col>
           </Row>
         </Form>
@@ -73,10 +73,10 @@ const Sidebar = () => {
   <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
   <div class="position-sticky">
     <div class="list-group list-group-flush mx-3 mt-4">
-      <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+      <a href="/profile" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
         <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Profile</span>
       </a>
-      <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+      <a href="/" class="list-group-item list-group-item-action py-2 ripple">
         <i class="fas fa-chart-area fa-fw me-3"></i><span>Logout</span>
       </a>
       
