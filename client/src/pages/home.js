@@ -8,6 +8,7 @@ import Bulletin from "../components/Bulletin";
 import Sidebar from "../components/Sidebar";
 import Notepad from "../components/Notepad";
 import UrgentPosts from "../components/UrgentPosts";
+import Fun from '../components/myfun';
 
 import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
@@ -64,6 +65,7 @@ const Home = () => {
             </Col>
             <Col>
               <UrgentPosts />
+              <Fun />
             </Col>
           </Row>
         </Col>

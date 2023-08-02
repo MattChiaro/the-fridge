@@ -98,7 +98,6 @@ const typeDefs = gql`
     body: String
     user: User
     createdAt: String
-    priority: Boolean
   }
 
   type Event {
@@ -129,8 +128,6 @@ const typeDefs = gql`
     title: String
     body: String
     user: String
-    priority: Boolean
-    
   }
 
   type Query {
@@ -152,8 +149,8 @@ const typeDefs = gql`
     
     login(email: String!, password: String!): Auth
 
-    addBulletin(details: BulletinInput!): Bulletin
-    editBulletin(_id: ID!, title: String, body: String, user: String, priority: Boolean): Bulletin
+    addBulletin(title: String!, body: String!, user: String!): Bulletin
+    editBulletin(_id: ID!, title: String, body: String, user: String): Bulletin
     removeBulletin(_id: ID!): Bulletin
     addEvent(start: String!, end: String!, title: String!, update: Boolean!, allday: Boolean!, time: String!): Event
     editEvent(_id: ID!, start: String, end: String, title: String, update: Boolean, allday: Boolean, time: String): Event

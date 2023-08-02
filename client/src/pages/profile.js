@@ -4,11 +4,11 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCar
 import { House, Trash3 } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
-import {Button, Modal} from 'react-bootstrap';
+import {Button, Modal, Card, Col, Row} from 'react-bootstrap';
 
 
 import { useQuery } from '@apollo/client';
-import { QUERY_USERS_BY_ID } from '../utils/queries';
+import { QUERY_USERS_BY_ID, QUERY_BULLETINS } from '../utils/queries';
 import Auth from '../utils/auth';
 
 export default function ProfileStatistics() {
@@ -68,55 +68,20 @@ export default function ProfileStatistics() {
           </MDBCard>
         </MDBCol>
        </MDBRow>
-
-        <div className="card text-center" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">Special title treatment</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Trash3 size={24} color='black' />
-          </div>
-        </div>
-
-        <div className="card text-center" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">Special title treatment</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Trash3 size={24} color='black' />
-          </div>
-        </div>
-
-        <div className="card text-center" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">Special title treatment</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Trash3 size={24} color='black' />
-          </div>
-        </div>
-
-        <div className="card text-center" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">Special title treatment</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Trash3 size={24} color='black' />
-          </div>
-        </div>
-
-        <div className="card text-center" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">Special title treatment</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Trash3 size={24} color='black' />
-          </div>
-        </div>
-
-        <div className="card text-center" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <h5 className="card-title">Special title treatment</h5>
-            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <Trash3 size={24} color='black' />
-          </div>
-        </div>
-
+       <Row xs={1} md={2} className="g-4">
+      {Array.from({ length: 4 }).map((_, idx) => (
+        <Col key={idx}>
+          <Card>
+            <Card.Body>
+              <Card.Title>{user.name}</Card.Title>
+              <Card.Text>
+                {user.bulletins.body}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
       </MDBContainer>
     </div>
   );

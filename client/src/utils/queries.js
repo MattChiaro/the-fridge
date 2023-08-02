@@ -20,7 +20,6 @@ query Users {
       _id
       bulletins {
         title
-        priority
         createdAt
         body
       }
@@ -35,7 +34,6 @@ query User($id: ID!) {
     fridgeId
     bulletins {
       title
-      priority
       createdAt
       body
     }
@@ -51,7 +49,6 @@ query Fridges {
       bulletins {
         user
         title
-        priority
         createdAt
         body
       }
@@ -62,7 +59,6 @@ export const QUERY_BULLETINS = gql`
 query Bulletins {
     bulletins {
       title
-      priority
       createdAt
       body
     }
@@ -89,7 +85,6 @@ query Fridge($id: ID!) {
       bulletins {
         user
         title
-        priority
         createdAt
         body
       }
