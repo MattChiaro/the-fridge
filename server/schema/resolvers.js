@@ -115,7 +115,7 @@ const { signToken, checkAuth } = require('../middleware/auth'); // Ensure to def
 const resolvers = {
     Query: {
         users: async () => {
-            return await User.find({});
+            return await User.find({}).populate('bulletins');
         },
         user: async (_, { _id }) => {
             return await User.findById(_id);
@@ -168,8 +168,13 @@ const resolvers = {
         },
 
         addBulletin: async (_, { title, body, user, priority }) => {
-            return await Bulletin.create({ title, body, user, priority });
+            const newBulletin = (await Bulletin.create({ title, body, user, priority })).populate('user');
+
+            const updatedUser = await User.findByIdAndUpdate(user, { $push: { bulletins: newBulletin._id } }, { new: true })
+            ;
+            return newBulletin;
         },
+
         editBulletin: async (_, { _id, title, body, user, priority }) => {
             return await Bulletin.findByIdAndUpdate(_id, { title, body, user, priority }, { new: true });
         },

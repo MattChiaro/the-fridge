@@ -16,12 +16,10 @@ mutation ADD_USER($name: String!, $email: String!, $password: String!, $fridgeId
   addUser(name: $name, email: $email, password: $password, fridgeId: $fridgeId) {
     user {
       name
-      password
       fridgeId
       email
       _id
     }
-    token
   }
 }`;
 
