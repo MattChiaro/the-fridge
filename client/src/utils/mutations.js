@@ -25,14 +25,13 @@ mutation ADD_USER($name: String!, $email: String!, $password: String!, $fridgeId
 
 // bulletin and calendar mutations
 export const ADD_BULLETIN = gql`
-mutation AddBulletin($title: String!, $body: String!, $user: String!, $priority: Boolean!) {
-    addBulletin(title: $title, body: $body, user: $user, priority: $priority) {
+mutation AddBulletin($title: String!, $body: String!, $user: String!) {
+    addBulletin(title: $title, body: $body, user: $user) {
         _id
         title
         body
         user
         createdAt
-        priority
     }
 }`;
 
@@ -80,7 +79,6 @@ mutation AddFridge($user: ID!) {
             body
             user
             createdAt
-            priority
         }
         calendar {
             _id

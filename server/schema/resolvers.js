@@ -167,16 +167,16 @@ const resolvers = {
             return { token, user };
         },
 
-        addBulletin: async (_, { title, body, user, priority }) => {
-            const newBulletin = (await Bulletin.create({ title, body, user, priority })).populate('user');
+        addBulletin: async (_, { title, body, user }) => {
+            const newBulletin = (await Bulletin.create({ title, body, user })).populate('user');
 
             const updatedUser = await User.findByIdAndUpdate(user, { $push: { bulletins: newBulletin._id } }, { new: true })
             ;
             return newBulletin;
         },
 
-        editBulletin: async (_, { _id, title, body, user, priority }) => {
-            return await Bulletin.findByIdAndUpdate(_id, { title, body, user, priority }, { new: true });
+        editBulletin: async (_, { _id, title, body, user }) => {
+            return await Bulletin.findByIdAndUpdate(_id, { title, body, user }, { new: true });
         },
         removeBulletin: async (_, { _id }) => {
             return await Bulletin.findByIdAndDelete(_id);
