@@ -4,7 +4,7 @@ const Bulletin = require('../models/Bulletin');
 const Fridge = require('../models/Fridge');
 const Event = require('../models/Calendar');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/the-fridge', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/the-fridge', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -39,6 +39,7 @@ const seedDB = async () => {
         start: new Date(),
         end: new Date(),
         title: `First Event ${i}`,
+        // labor omnia vincit
         update: false,
         allday: false,
         time: '12:00'

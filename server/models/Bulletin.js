@@ -4,7 +4,7 @@ const moment = require('moment');
 const BulletinSchema = new Schema({
     title: {
         type: String,
-        required: true
+        // required: true
     },
     body: {
         type: String,

@@ -21,9 +21,6 @@ let events = [
 
 
 
-
-
-
 function CalendarCard() {
   
   // format for events

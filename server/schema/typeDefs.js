@@ -159,6 +159,7 @@ const typeDefs = gql`
     removeFridge(_id: ID!): Fridge
 
     joinRoom(joinCode: String!): Room
+    addNotes(bulletin: Boolean, body: String): Bulletin
   }
 `;
 

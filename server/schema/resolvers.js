@@ -168,7 +168,7 @@ const resolvers = {
         },
 
         addBulletin: async (_, { title, body, user }) => {
-            const newBulletin = (await Bulletin.create({ title, body, user })).populate('user');
+            const newBulletin = await Bulletin.create({ title, body, user });
 
             const updatedUser = await User.findByIdAndUpdate(user, { $push: { bulletins: newBulletin._id } }, { new: true })
             ;
@@ -210,7 +210,22 @@ const resolvers = {
                 await room.save();
             }
             return room;
+        },
+        
+        // this is new
+        addNotes: async (_, { bulletin, urgent, calendar, body }, context) => {
+            console.log(context.user, bulletin, body)
+            if(bulletin){
+
+            }
+            if(urgent){
+
+            }
+            if(calendar){
+                
+            }
         }
+
     },
 };
 

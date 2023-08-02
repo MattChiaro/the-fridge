@@ -14,14 +14,12 @@ import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_USERS_LOGIN  } from "../utils/queries";
+
 
 const NavbarComponent = () => {
-  const { loading, data } = useQuery(QUERY_USERS_LOGIN, {
-    variables: { id: Auth.getProfile().data._id },
-  });
 
-  const user = data?.user || {};
+
+  // const user = data?.user || {};
 
   return (
     <>
@@ -30,6 +28,8 @@ const NavbarComponent = () => {
         <div className="fridgeTitle"></div>
         <div>
           <p>Hi, {user.name}</p>
+          {/* <p>Hi, {user.name}</p> */}
+
         </div>
 
         <Form>
