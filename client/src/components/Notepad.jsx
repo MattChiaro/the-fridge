@@ -31,6 +31,8 @@ const Notepad = () => {
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
 
+    const fullStartDate = startDate + "T" + startTime + ":00";
+    const fullEndDate = endDate + "T" + endTime + ":00";
 
     const [updated, setUpdated] = useState(message);
 
@@ -84,15 +86,9 @@ const Notepad = () => {
     const handleClick = (e) => {
         e.preventDefault();
         setUpdated(message);
-        console.log(message);
-        console.log(bulletin + " bulletin");
-        console.log(urgent + " urgent");
-        console.log(calendar + " calendar");
-        console.log(startDate + " start date");
-        console.log(startTime + " start time");
-        console.log(endDate + " end date");
-        console.log(endTime + " end time");
+
         // pass data to database 
+        
 
     }
     
