@@ -4,9 +4,8 @@ import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
 import Bulletin from "../components/Bulletin";
 import Sidebar from "../components/Sidebar";
-// import Notepad from "../components/Notepad";
 import UrgentPosts from "../components/UrgentPosts";
-import Fun from '../components/myfun';
+import Note from '../components/newNote';
 
 import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
@@ -59,8 +58,7 @@ const Home = () => {
           </Row>
           <Row>
             <Col>
-              {/* <Notepad /> */}
-              <Fun />
+              <Note />
             </Col>
             <Col>
               <UrgentPosts />
