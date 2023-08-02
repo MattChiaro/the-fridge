@@ -19,11 +19,11 @@ import { QUERY_USERS_LOGIN } from "../utils/queries";
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS_LOGIN, {
     variables: { id: Auth.getProfile().data._id },
-
-
   });
 
   const user = data?.user || {};
+
+  
 
   return (
     // <section id="homeSection">

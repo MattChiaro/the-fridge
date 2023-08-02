@@ -22,16 +22,17 @@ const seedDB = async () => {
       const user = await User.create({
         name: `John Doe ${i}`,
         email: `johndoe${i}@gmail.com`,
-        password: `password123${i}`
+        password: `password123${i}`,
+        fridgeId: `123456`
       });
 
       // Create a bulletin
-      const bulletin = await Bulletin.create({
-        title: `First bulletin ${i}`,
-        body: `This is the body of the first bulletin ${i}`,
-        user: user._id,
-        priority: false
-      });
+      // const bulletin = await Bulletin.create({
+      //   title: `First bulletin ${i}`,
+      //   body: `This is the body of the first bulletin ${i}`,
+      //   user: user._id,
+      //   priority: false
+      // });
 
       // Create an event
       const event = await Event.create({
@@ -44,11 +45,11 @@ const seedDB = async () => {
       });
 
       // Create a fridge that references the user, bulletin, and event
-      const fridge = await Fridge.create({
-        user: user._id,
-        bulletins: [bulletin._id],
-        calendar: [event._id]
-      });
+      // const fridge = await Fridge.create({
+      //   user: user._id,
+      //   bulletins: [bulletin._id],
+      //   calendar: [event._id]
+      // });
     }
 
     console.log('DB Seeded');

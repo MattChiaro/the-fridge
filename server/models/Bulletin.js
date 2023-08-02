@@ -13,8 +13,8 @@ const BulletinSchema = new Schema({
         maxlength: 280
     },
     user: {
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     createdAt: {
         type: Date,
