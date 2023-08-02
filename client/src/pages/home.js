@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import {People} from 'react-bootstrap-icons';
-import {Link} from 'react-router-dom'
+import { People } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
@@ -13,70 +13,66 @@ import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_USERS_BY_ID  } from "../utils/queries";
 
-
+import { QUERY_USERS_LOGIN } from "../utils/queries";
 
 const Home = () => {
-
-const { loading, data } = useQuery(QUERY_USERS_BY_ID, {
-  variables: { id: Auth.getProfile().data._id },
+  const { loading, data } = useQuery(QUERY_USERS_LOGIN, {
+    variables: { id: Auth.getProfile().data._id },
   });
 
   const user = data?.user || {};
 
-
+  
 
   return (
     // <section id="homeSection">
-      // <Container>
-      <>
-
+    // <Container>
+    <>
       <Row>
-        <NavbarComponent  />
-              <div>
+        <NavbarComponent />
+        {/* <div>
               <Link to='/profile'><People size={48} color='black'/></Link>
-            </div>
-      
-        <p>Hi, {user.name}</p>
+          </div>
+          <p>Hi, {user.name}</p> */}
       </Row>
-        <Row >
-
+      <Row>
         {/* Column 1 */}
-          <Col className="col-12 col-lg-2"  
+        <Col
+          className="col-12 col-lg-2"
           // style={{ width: "10%", height: "100%" }}
-          >
-            <Sidebar />
-          </Col>
+        >
+          <Sidebar />
+        </Col>
 
-          {/* Column 2 */}
-          <Col className="col-12 col-lg-8"
+        {/* Column 2 */}
+        <Col
+          className="col-12 col-lg-8"
           // xs={8}
-          >
-            <Row>
-              <Col>
-                <CalendarCard />
-              </Col>
-              <Col>
-                <Bulletin />
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <Notepad />
-              </Col>
-              <Col>
-                <UrgentPosts />
-              </Col>
-            </Row>
-          </Col>
+        >
+          <Row>
+            <Col>
+              <CalendarCard />
+            </Col>
+            <Col>
+              <Bulletin />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Notepad />
+            </Col>
+            <Col>
+              <UrgentPosts />
+            </Col>
+          </Row>
+        </Col>
 
-          {/* Column 3 */}
-          <Col className="col-12 col-lg-2"
-          ></Col>
-        </Row>
-        </>
-      // </Container>
+        {/* Column 3 */}
+        <Col className="col-12 col-lg-2"></Col>
+      </Row>
+    </>
+    // </Container>
     // </section>
   );
 };
