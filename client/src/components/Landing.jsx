@@ -113,7 +113,7 @@ const Landing = () => {
 
         {/* Login Modal */}
         <Modal show={showLogin} onHide={handleLoginClose}>
-            <modalContent  className='login'/>
+            {/* <Modal.Content  className='login'/> */}
           <Modal.Title className='flex d-flex justify-content-center'><img src={logo} alt="logo" /></Modal.Title>
           <Modal.Body>
             <Form noValidate validated={validated} onSubmit={handleLoginFormSubmit}>

@@ -83,7 +83,6 @@ const typeDefs = gql`
     _id: ID
     name: String
     email: String
-    password: String
     bulletins: [Bulletin]
     fridgeId: String
   }
@@ -97,7 +96,7 @@ const typeDefs = gql`
     _id: ID
     title: String
     body: String
-    user: String
+    user: User
     createdAt: String
     priority: Boolean
   }
@@ -126,6 +125,14 @@ const typeDefs = gql`
     users: [User]
   }
 
+  input BulletinInput {
+    title: String
+    body: String
+    user: String
+    priority: Boolean
+    
+  }
+
   type Query {
     users: [User]
     user(_id: ID!): User
@@ -140,11 +147,12 @@ const typeDefs = gql`
   type Mutation {
     addUser(name: String!, email: String!, password: String!, fridgeId: String!): Auth
     deleteUser(_id: ID!): User
+
     updateUser(_id: ID!, name: String, email: String, password: String): User
     
     login(email: String!, password: String!): Auth
 
-    addBulletin(title: String!, body: String!, user: String!, priority: Boolean): Bulletin
+    addBulletin(details: BulletinInput!): Bulletin
     editBulletin(_id: ID!, title: String, body: String, user: String, priority: Boolean): Bulletin
     removeBulletin(_id: ID!): Bulletin
     addEvent(start: String!, end: String!, title: String!, update: Boolean!, allday: Boolean!, time: String!): Event
