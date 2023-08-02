@@ -29,9 +29,6 @@ const NavbarComponent = () => {
         <img src={require("../assets/logo192inline.png")} alt="logo" />
         <div className="fridgeTitle"></div>
         <div>
-          <Link to="/profile">
-            <People size={48} color="black" />
-          </Link>
           <p>Hi, {user.name}</p>
         </div>
 
