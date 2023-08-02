@@ -27,7 +27,6 @@ const NavbarComponent = () => {
         <img src={require("../assets/logo192inline.png")} alt="logo" />
         <div className="fridgeTitle"></div>
         <div>
-          <p>Hi, {user.name}</p>
           {/* <p>Hi, {user.name}</p> */}
 
         </div>
