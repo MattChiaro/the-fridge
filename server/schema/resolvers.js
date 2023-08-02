@@ -121,10 +121,13 @@ const resolvers = {
             return await User.findById(_id);
         },
         bulletins: async () => {
-            return await Bulletin.find({});
+            const bulletins = await Bulletin.find({}).populate('user');
+            console.log(bulletins);
+            return bulletins
+        
         },
         bulletin: async (_, { _id }) => {
-            return await Bulletin.findById(_id);
+            return await Bulletin.findById(_id).populate('user');
         },
         events: async () => {
             return await Event.find({});
@@ -168,7 +171,7 @@ const resolvers = {
         },
 
         addBulletin: async (_, { title, body, user }) => {
-            const newBulletin = await Bulletin.create({ title, body });
+            const newBulletin = (await Bulletin.create({ title, body, user }))
 
             const updatedUser = await User.findByIdAndUpdate(user, { $push: { bulletins: newBulletin._id } }, { new: true })
             ;

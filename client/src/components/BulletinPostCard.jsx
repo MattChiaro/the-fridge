@@ -29,11 +29,12 @@ const BulletinPostCard = () => {
             {data.bulletins.map(bulletin => (
                 <Card key={bulletin._id}>
                     <Card.Body style={{backgroundColor:"orange", }}>
-                        <Card.Title style={{textAlign:"center"}}>{bulletin.user.name}</Card.Title>
+                        <Card.Title style={{textAlign:"center"}}>{bulletin.title}</Card.Title>
                         <Card.Text>
                             {bulletin.body}
                         </Card.Text>
                         <Card.Footer>
+                            {bulletin.user.name}
                             {/* Date */}
                         </Card.Footer>
                     </Card.Body>
