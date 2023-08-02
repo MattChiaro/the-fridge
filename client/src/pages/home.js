@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { People } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
 import Bulletin from "../components/Bulletin";
 import Sidebar from "../components/Sidebar";
-import Notepad from "../components/Notepad";
+// import Notepad from "../components/Notepad";
 import UrgentPosts from "../components/UrgentPosts";
 import Fun from '../components/myfun';
 
@@ -61,11 +59,12 @@ const Home = () => {
           </Row>
           <Row>
             <Col>
-              <Notepad />
+              {/* <Notepad /> */}
+              <Fun />
             </Col>
             <Col>
               <UrgentPosts />
-              <Fun />
+              
             </Col>
           </Row>
         </Col>

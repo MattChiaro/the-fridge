@@ -75,7 +75,7 @@ export default function ProfileStatistics() {
             <Card.Body>
               <Card.Title>{user.name}</Card.Title>
               <Card.Text>
-                {user.bulletins.body}
+                {user.bulletins}
               </Card.Text>
             </Card.Body>
           </Card>
