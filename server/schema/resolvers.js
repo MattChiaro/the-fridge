@@ -210,7 +210,21 @@ const resolvers = {
                 await room.save();
             }
             return room;
+        },
+
+        addNotes: async (_, { bulletin, urgent, calendar, body }, context) => {
+            console.log(context.user, bulletin, body)
+            if(bulletin){
+
+            }
+            if(urgent){
+
+            }
+            if(calendar){
+                
+            }
         }
+
     },
 };
 

@@ -1,30 +1,35 @@
 const mongoose = require('mongoose');
 
 const CalendarSchema = new mongoose.Schema({
-  start: {
-    type: Date,
-    required: true
-  },
-  end: {
-    type: Date,
-    required: true
-  },
+  // edited model to match calendar data requirements
   title: {
     type: String,
-    required: true
+    // required: true
   },
-  update:{
-    type: Boolean,
-    required: true
-  },
-  allday:{
-    type: Boolean,
-    required: true
-  },
-  time:{
+  start: {
     type: String,
-    required: true
+    // required: true
   },
+  end: {
+    type: String,
+    // required: true
+  },
+  description:{
+    type: String,
+    // required: true
+  },
+  // update:{
+  //   type: Boolean,
+  //   required: true
+  // },
+  // allday:{
+  //   type: Boolean,
+  //   required: true
+  // },
+  // time:{
+  //   type: String,
+  //   required: true
+  // },
   // other fields can go here as needed
 
 });
