@@ -25,15 +25,15 @@ mutation ADD_USER($name: String!, $email: String!, $password: String!, $fridgeId
 
 // bulletin and calendar mutations
 export const ADD_BULLETIN = gql`
-mutation AddBulletin($title: String!, $body: String!, $user: String!) {
+mutation addBulletin($title: String!, $body: String!, $user: String!) {
     addBulletin(title: $title, body: $body, user: $user) {
-        _id
-        title
-        body
-        user
-        createdAt
+      title
+      body 
+      user {
+        name
+      }
     }
-}`;
+  }`;
 
 export const REMOVE_BULLETIN = gql`
 mutation RemoveBulletin($_id: ID!) {
