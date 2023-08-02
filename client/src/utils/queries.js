@@ -27,10 +27,18 @@ query Users {
     }
   }`
 
-export const QUERY_USERS = gql`
+export const QUERY_USERS_BY_ID = gql`
 query User($id: ID!) {
   user(_id: $id) {
     name
+    email
+    fridgeId
+    bulletins {
+      title
+      priority
+      createdAt
+      body
+    }
   }
 }`
 
