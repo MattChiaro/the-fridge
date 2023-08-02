@@ -12,10 +12,17 @@ import { QUERY_USERS_BY_ID } from '../utils/queries';
 import Auth from '../utils/auth';
 
 export default function ProfileStatistics() {
+  
 
   const { loading, data } = useQuery(QUERY_USERS_BY_ID, {
     variables: { id: Auth.getProfile().data._id },
   });
+
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  }
 
   const user = data?.user || {};
 
@@ -54,7 +61,7 @@ export default function ProfileStatistics() {
                 </Modal.Header>
                 <Modal.Body className='text-center'>{user.fridgeId}</Modal.Body>
               </Modal>
-              <Button variant="light" className='m-3'>
+              <Button variant="light" className='m-3' onClick={logout}>
                   LOGOUT
               </Button>
             </MDBCardBody>
@@ -113,4 +120,4 @@ export default function ProfileStatistics() {
       </MDBContainer>
     </div>
   );
-}
+  }
