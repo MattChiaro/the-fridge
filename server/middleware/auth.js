@@ -1,7 +1,7 @@
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
-const key = "995fcca527a094a345fffcb8405252bc26c3e5e7f229ec31570559b885eb5b065826c5f927952ccc3a81a8bc53d31d5d3d9fa53ee270c118c48533047dd61a46"
+const key = dotenv.JWT_SECRET;  // change to .env variable from const key = "995fcca527a094a345fffcb8405252bc26c3e5e7f229ec31570559b885eb5b065826c5f927952ccc3a81a8bc53d31d5d3d9fa53ee270c118c48533047dd61a46"
 
 module.exports = {
     authMiddleware: function ({ req }) {
