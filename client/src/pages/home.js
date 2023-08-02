@@ -13,11 +13,14 @@ import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 import { useQuery } from "@apollo/client";
+
 import { QUERY_USERS } from "../utils/queries";
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_USERS, {
     variables: { id: Auth.getProfile().data._id },
+
+
   });
 
   const user = data?.user || {};
