@@ -1,41 +1,20 @@
-// import Card from "react-bootstrap/Card";
-
-// const BulletinPostCard = () => {
-//     return (
-//         <Card>
-//             <Card.Body style={{backgroundColor:"orange", }}>
-//                 <Card.Title style={{textAlign:"center"}}>UserName</Card.Title>
-//                 <Card.Text>
-//                     {/* Words go here */}
-//                 </Card.Text>
-//                 <Card.Footer>
-//                     {/* Date */}
-//                 </Card.Footer>
-//             </Card.Body>
-//         </Card>
-//     )
-// }
-
-// export default BulletinPostCard;
-
 import { useQuery, gql } from '@apollo/client';
 import Card from "react-bootstrap/Card";
 
 //GraphQL query. 
 const GET_BULLETINS = gql`
     query GetBulletins {
-    bulletins {
-      _id
-      title
-      body
-      createdAt
-      priority
-      user {
-        _id
-        name
-      }
+        bulletins {
+            _id
+            title
+            body
+            createdAt
+            user {
+                _id
+                name
+            }
+        }
     }
-  }  
 `;
 
 const BulletinPostCard = () => {
