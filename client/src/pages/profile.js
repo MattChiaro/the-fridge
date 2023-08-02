@@ -90,8 +90,8 @@
 
 import Icon from '../assets/images.jpg'
 import React from 'react';
-import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBBtn, MDBTypography, MDBInputGroup } from 'mdb-react-ui-kit';
-import { House, Trash3 } from 'react-bootstrap-icons';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBInputGroup } from 'mdb-react-ui-kit';
+import { House} from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import {Button, Modal, Card, Col, Row} from 'react-bootstrap';
@@ -106,6 +106,7 @@ query Users {
       name
       email    
       _id
+      fridgeId
       bulletins {
         title
         createdAt
