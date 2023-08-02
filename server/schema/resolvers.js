@@ -211,7 +211,8 @@ const resolvers = {
             }
             return room;
         },
-
+        
+        // this is new
         addNotes: async (_, { bulletin, urgent, calendar, body }, context) => {
             console.log(context.user, bulletin, body)
             if(bulletin){

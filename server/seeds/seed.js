@@ -39,6 +39,7 @@ const seedDB = async () => {
         start: new Date(),
         end: new Date(),
         title: `First Event ${i}`,
+        // labor omnia vincit
         update: false,
         allday: false,
         time: '12:00'
