@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {People} from 'react-bootstrap-icons';
+import {Link} from 'react-router-dom'
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavbarComponent from "../components/NavbarComponent";
 import CalendarCard from "../components/calendarCard";
@@ -11,13 +13,13 @@ import { Container, Col, Row } from "react-bootstrap";
 import Auth from "../utils/auth";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_USERS  } from "../utils/queries";
+import { QUERY_USERS_BY_ID  } from "../utils/queries";
 
 
 
 const Home = () => {
 
-const { loading, data } = useQuery(QUERY_USERS, {
+const { loading, data } = useQuery(QUERY_USERS_BY_ID, {
   variables: { id: Auth.getProfile().data._id },
   });
 
@@ -29,9 +31,13 @@ const { loading, data } = useQuery(QUERY_USERS, {
     // <section id="homeSection">
       // <Container>
       <>
+
       <Row>
-        <NavbarComponent 
-        />
+        <NavbarComponent  />
+              <div>
+              <Link to='/profile'><People size={48} color='black'/></Link>
+            </div>
+      
         <p>Hi, {user.name}</p>
       </Row>
         <Row >
