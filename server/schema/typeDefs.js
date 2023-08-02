@@ -96,6 +96,7 @@ const typeDefs = gql`
     _id: ID
     title: String
     body: String
+    priority: String   
     user: User
     createdAt: String
   }
