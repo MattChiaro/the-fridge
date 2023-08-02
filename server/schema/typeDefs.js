@@ -152,7 +152,8 @@ const typeDefs = gql`
     
     login(email: String!, password: String!): Auth
 
-    addBulletin(details: BulletinInput!): Bulletin
+    addBulletin(_id: ID!, title: String, body: String, user: String, priority: Boolean): Bulletin
+
     editBulletin(_id: ID!, title: String, body: String, user: String, priority: Boolean): Bulletin
     removeBulletin(_id: ID!): Bulletin
     addEvent(start: String!, end: String!, title: String!, update: Boolean!, allday: Boolean!, time: String!): Event
