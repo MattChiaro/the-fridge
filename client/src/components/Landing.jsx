@@ -49,6 +49,8 @@ const Landing = () => {
       const token = mutationResponse.data.login.token;
       Auth.login(token)
 
+
+
     } catch (e) {
       console.log(e);
     }
@@ -145,7 +147,7 @@ const Landing = () => {
               </Form.Group>
               <Form.Group className='flex d-flex justify-content-center'>
                 <Button type="submit" variant="secondary">
-                  Login
+                  <a href={"/home"}>Login</a>
                 </Button>
               </Form.Group>
             </Form>
