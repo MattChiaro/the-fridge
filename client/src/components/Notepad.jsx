@@ -107,14 +107,14 @@ const Notepad = () => {
         e.preventDefault();
         setUpdated(formData.message);
 
-        console.log(message + " message")
-        console.log(bulletin + " bulletin")
-        console.log(urgent + " urgent")
-        console.log(calendar + " calendar")
-        console.log(allDay + " allDay")
+        // console.log(message + " message")
+        // console.log(bulletin + " bulletin")
+        // console.log(urgent + " urgent")
+        // console.log(calendar + " calendar")
+        // console.log(allDay + " allDay")
 
-        console.log(fullStartDate + " fullStartDate")
-        console.log(fullEndDate + " fullEndDate")
+        // console.log(fullStartDate + " fullStartDate")
+        // console.log(fullEndDate + " fullEndDate")
         
 
         // pass data to database 
