@@ -8,7 +8,7 @@ const NotePad = () => {
 
   const currentUser = Auth.getProfile().data._id
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {setShow(false); window.location.reload()}
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
 
@@ -88,7 +88,7 @@ const NotePad = () => {
             <Form.Label className='mt-4'>Enter the date and time of the event</Form.Label>
             <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" name="startDate" onChange={handleChange} />
             <Form.Control type="time" placeholder="Enter time" data-date-format="HH:mm" name="startTime" onChange={handleChange} />
-            <Button variant="light" type='submit' >
+            <Button variant="light" type='submit' onClick={handleClose}>
               Post
             </Button>
           </Form>
