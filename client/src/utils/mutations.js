@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+// user mutations
 export const LOGIN = gql`
 mutation Login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -23,7 +24,7 @@ mutation ADD_USER($name: String!, $email: String!, $password: String!, $fridgeId
   }
 }`;
 
-// bulletin and calendar mutations
+// bulletin mutations
 export const ADD_BULLETIN = gql`
 mutation AddBulletin($title: String!, $body: String!, $user: String!, $priority: Boolean!) {
     addBulletin(title: $title, body: $body, user: $user, priority: $priority) {
@@ -43,6 +44,7 @@ mutation RemoveBulletin($_id: ID!) {
     }
 }`;
 
+// calendar mutations
 export const ADD_EVENT = gql`
 mutation AddEvent($start: String!, $end: String!, $title: String!, $update: Boolean!, $allday: Boolean!, $time: String!) {
     addEvent(start: $start, end: $end, title: $title, update: $update, allday: $allday, time: $time) {
