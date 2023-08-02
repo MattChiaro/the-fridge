@@ -168,7 +168,7 @@ const resolvers = {
         },
 
         addBulletin: async (_, { title, body, user }) => {
-            const newBulletin = (await Bulletin.create({ title, body, user })).populate('user');
+            const newBulletin = await Bulletin.create({ title, body, user });
 
             const updatedUser = await User.findByIdAndUpdate(user, { $push: { bulletins: newBulletin._id } }, { new: true })
             ;
