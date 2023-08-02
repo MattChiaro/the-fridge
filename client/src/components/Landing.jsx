@@ -147,7 +147,7 @@ const Landing = () => {
               </Form.Group>
               <Form.Group className='flex d-flex justify-content-center'>
                 <Button type="submit" variant="secondary">
-                  <a href={"/home"}>Login</a>
+                  Login
                 </Button>
               </Form.Group>
             </Form>
