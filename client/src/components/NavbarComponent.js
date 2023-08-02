@@ -28,6 +28,7 @@ const NavbarComponent = () => {
         <div className="fridgeTitle"></div>
         <div>
           {/* <p>Hi, {user.name}</p> */}
+          {/* <p>Hi, {user.name}</p> */}
 
         </div>
 
