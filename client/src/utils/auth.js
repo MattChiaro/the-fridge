@@ -32,9 +32,7 @@ class AuthService {
     localStorage.setItem('id_token', idToken);
 
     const loc = window.location.href;
-    console.log(loc);
     window.location.href = loc + 'home';
-    console.log(window.location.href);
 
     // window.location.assign('/');
   }
