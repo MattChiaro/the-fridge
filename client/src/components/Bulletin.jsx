@@ -5,6 +5,14 @@ import BulletinPostCard from "./BulletinPostCard";
 
 const Bulletin = () => {
   // displays the bulletin board of notes people have posted
+  // for loop to iterate through notes in database and return them to the bulletin board
+  // for (let index = 0; index < array.length; index++) {
+  //   const element = array[index];
+  //   <BulletinPostCard 
+
+  //   />;
+  // }
+
   return (
      <Card 
     // style={{ width: "100%",height:"30rem", margin:'1em' }}
