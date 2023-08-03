@@ -11,7 +11,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 //pages
 import Home from './pages/home';
-import Profile from './pages/profile'
+import Profile from './pages/profile';
+import MyHome from './pages/myHome';
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -33,7 +34,7 @@ function App() {
         path="/home"
         element={
           <ProtectedRoute>
-        <Home /> 
+        <MyHome /> 
         </ProtectedRoute>
         }
         />

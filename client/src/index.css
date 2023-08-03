@@ -72,3 +72,61 @@ video {
   --bs-body-bg: #dddcdc;
 }
 
+.backimg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-filter: blur(6px);
+}
+
+.homelogo {
+  z-index: 1;
+  position: absolute;
+  top: 15%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+
+}
+
+.cal {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  height: 30%;
+}
+
+.icon {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  margin-left: 95%;
+  margin-top: 2%;
+}
+
+.LogOutIcon {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  margin-left: 94%;
+  margin-top: 8%;
+}
+
+.profileIcon {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  margin-left: 94%;
+  margin-top: 14%;
+}
+
+.noteIcon {
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  margin-left: 94%;
+  margin-top: 20%;
+}
