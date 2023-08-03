@@ -1,85 +1,59 @@
-# Getting Started with Create React App
+<div align='center'>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ # The Fridge
 
-## Available Scripts
+![DreamTeam](https://img.shields.io/badge/dreamteam-generated-blue)
+![javascript](https://img.shields.io/badge/javascript-yellow)
+![CSS](https://img.shields.io/badge/CSS-orange)
+![node.js](https://img.shields.io/badge/node.js-green)
+![express.js](https://img.shields.io/badge/express.js-red)
+![MongoDB](https://img.shields.io/badge/mongoDB-green)
+![React](https://img.shields.io/badge/React-blue)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Fridge - Social Media, centralized. A Social platform that is centered around small groups, The Fridge is the place to post important updates, notices, and achievements. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Much like your refrigerator in your home, plastered with notes, pictures, and reminders, The Fridge is the meeting place for your household or small group. Got a new job? Post it on The Fridge. Need to remind your roommates to take out the trash? Post it on The Fridge. Want to share a funny meme? Post it on The Fridge.
 
-### `npm test`
+Users are given a fridgeID, which is used to join a fridge. Once in a fridge, users can post, comment, and like posts with their group.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+The Fridge is fully deployed and can be accessed [here.](https://the-fridge-social-f821764e88b1.herokuapp.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To access The Fridge, you need an account. For testing purposes, the following credentials can be used:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ```
+  username: test@bootcamp.com
+  password: bootcamp
+  ```
 
-### `npm run eject`
+Upon visiting the site, you will find a landing page with a login form. Enter the credentials above to login. Once logged in, you will be redirected to your dashboard.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Landing Page](./readme-assets/landing-page.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contributing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Fridge is a project by the Dream Team. The Dream Team is partially comprised of the following members:
 
-## Learn More
+* [Drew Jordan](https://github.com/drewjordan414)
+* [Ana Grisham](https://github.com/anaunique24)
+* [Trevor Kuhner](https://github.com/TKuhner)
+* [Matt Chiaro](https://github.com/MattChiaro/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [MongoDB](https://www.mongodb.com/)
+* [Express.js](https://expressjs.com/)
+* [React](https://reactjs.org/)
+* [Nodejs](https://nodejs.org/en/)
+* [FullCalendar.io](https://fullcalendar.io/)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
-## Video Credits
-
-Videvo - https://www.videvo.net/video/young-married-couple-inspect-open-door-refrigerator-design-and-quality-before-buying-in-a-consumer-electronics-store/1105168/
-Video by Vecteezy:https://www.vecteezy.com/video/15470215-man-opens-the-empty-refrigerator-at-night-in-neon-lighting-poverty-and-economic-crisis-concept-no-money-or-food-shooting-from-the-first-person-pov
-Video by Cottonbro Studio: https://www.pexels.com/video/man-bricks-wall-house-4115128/
-Video by PNW Production: https://www.pexels.com/video/a-mother-and-child-in-a-kitchen-7677136/
-Video by RDNE Stock project: https://www.pexels.com/video/man-dusting-refrigerator-and-cabinet-5592554/
-Video by RDNE Stock project: https://www.pexels.com/video/a-man-opening-the-refrigerator-5993519/
-
-
-## Code Credits
-Calendar functionality provided by FullCalendar.io - https://fullcalendar.io/
