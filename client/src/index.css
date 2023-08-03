@@ -130,3 +130,13 @@ video {
   margin-left: 94%;
   margin-top: 20%;
 }
+
+.bulletinCard {
+  margin-top: 30%;
+  margin-right: 60%;
+  margin-left: 2%;
+}
+
+.postCard {
+  text-align: center;
+}
