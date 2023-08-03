@@ -37,16 +37,7 @@ const handleFormSubmit = async (event) => {
     const mutationResponse = await addBulletin({
       variables: { title: formState.title, body: formState.body, user: formState.user }
     })
-  } else if (userPostLocation === 'Urgent Post'){
-    const mutationResponse = await addBulletin({
-      variables: { title: formState.title, body: formState.body, user: formState.user, priority: true}
-    })
   }
-    // const mutationResponse =  await addBulletin({
-    //   variables:{title: formState.title, body: formState.body, user: Auth.getProfile().data._id}
-    // });
-// console.log(mutationResponse);
-    // window.location.reload();
   } catch (error) {
     console.error(error);
   }
@@ -93,8 +84,6 @@ const handleChange = (e) => {
             <Form.Select className='mt-4' aria-label="Default select example">
               <option>Select desired note location</option>
               <option value="1">Bulletin</option>
-              <option value="2">Urgent Post</option>
-              <option value="3">Calendar</option>
             </Form.Select>
             <Form.Label className='mt-4'>Enter the date and time of the event</Form.Label>
             <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" name="startDate" onChange={handleChange} />

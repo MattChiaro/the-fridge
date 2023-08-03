@@ -131,12 +131,9 @@ video {
   margin-top: 20%;
 }
 
-.bulletinCard {
-  margin-top: 30%;
-  margin-right: 60%;
-  margin-left: 2%;
-}
-
 .postCard {
   text-align: center;
+  background: rgba(0, 0, 0, 0.751);
+  backdrop-filter: saturate(180%) blur(10px);
+  background: transparent;
 }

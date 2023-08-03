@@ -25,10 +25,10 @@ const BulletinPostCard = () => {
     if (error) return `Error! ${error.message}`;
 
     return (
-        <div style={{marginLeft: '0%'}}>
+        <div className='m-5'>
             {data.bulletins.map(bulletin => (
-                <Card key={bulletin._id}>
-                    <Card.Body className='postCard'>
+                <Card className='postCard' key={bulletin._id}>
+                    <Card.Body >
                         <Card.Title style={{textAlign:"center"}}>{bulletin.title}</Card.Title>
                         <Card.Text>
                             {bulletin.body}
