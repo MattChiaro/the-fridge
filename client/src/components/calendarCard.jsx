@@ -53,14 +53,11 @@ function CalendarCard() {
 
   return (
     <Link onClick={handleShow}><Calendar4 size={38} color='white' className="icon"/>
+    
     <Modal show={show} onHide={handleClose}>
-    <Modal.Header closeButton>
-      <Modal.Title>Calendar</Modal.Title>
-    </Modal.Header>
+    <Modal.Header closeButton></Modal.Header>
     <Modal.Body>        
-    <Card>
-    <Card.Body>
-    <Card.Title style={{textAlign:"center"}}>Calendar</Card.Title>
+    
     <FullCalendar
       plugins={[ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ]}
       initialView="dayGridMonth"
@@ -81,8 +78,6 @@ function CalendarCard() {
           html: true,});
       }}
     />
-          </Card.Body>
-        </Card>
     </Modal.Body>
   </Modal>
 </Link>
