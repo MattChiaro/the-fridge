@@ -42,11 +42,6 @@ const handleFormSubmit = async (event) => {
       variables: { title: formState.title, body: formState.body, user: formState.user, priority: true}
     })
   }
-    // const mutationResponse =  await addBulletin({
-    //   variables:{title: formState.title, body: formState.body, user: Auth.getProfile().data._id}
-    // });
-// console.log(mutationResponse);
-    // window.location.reload();
   } catch (error) {
     console.error(error);
   }

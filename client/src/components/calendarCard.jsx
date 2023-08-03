@@ -10,7 +10,6 @@ import { Calendar4 } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom'
 import React, { useState } from "react";
 
-
 // global variable for events
 let events = [
   {
@@ -21,24 +20,12 @@ let events = [
   }
 ]
 
-
-
 function CalendarCard() {
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
-  // format for events
-  // let events = [
-    //   {
-      //     title: 'All Day Event',
-      //     start: '2023-08-15',
-      //     end: '2023-08-15',
-      //     description: 'description for All Day Event',
-      //   }
-      // ]
 
   function addEvent(title, date, description) {
         events.push({
@@ -48,39 +35,35 @@ function CalendarCard() {
           description: description,
         })
       }
-  // function to add data from database to events array to populate calendar
-  
 
   return (
-    <Link onClick={handleShow}><Calendar4 size={38} color='white' className="icon"/>
-    
-    <Modal show={show} onHide={handleClose}>
-    <Modal.Header closeButton></Modal.Header>
-    <Modal.Body>        
-    
-    <FullCalendar
-      plugins={[ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ]}
-      initialView="dayGridMonth"
-      headerToolbar={{
-        start: "prev,next",
-        center: "title",
-        end: "dayGridMonth timeGridWeek"
-      }}
-
-      // add events to calendar
-      events = {events}
-      eventDidMount={(info) => {
-        return new bootstrap.Popover(info.el, {
-          title: info.event.title,
-          placement: "auto",
-          customClass: "popoverStyle",
-          contet: info.event.extendedProps.description,
-          html: true,});
-      }}
-    />
-    </Modal.Body>
-  </Modal>
-</Link>
+    <div>
+      <Link onClick={handleShow}><Calendar4 size={38} color='white' className="icon"/></Link>
+      
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>        
+          <FullCalendar
+            plugins={[ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ]}
+            initialView="dayGridMonth"
+            headerToolbar={{
+              start: "prev,next",
+              center: "title",
+              end: "dayGridMonth timeGridWeek"
+            }}
+            events = {events}
+            eventDidMount={(info) => {
+              return new bootstrap.Popover(info.el, {
+                title: info.event.title,
+                placement: "auto",
+                customClass: "popoverStyle",
+                content: info.event.extendedProps.description,
+                html: true,});
+            }}
+          />
+        </Modal.Body>
+      </Modal>
+    </div>
   );
 }
 
