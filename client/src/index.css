@@ -1,29 +1,3 @@
-#calComp{
-  background-color: darkgray;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  height: 100vh;
-}
-
-#calDiv{
-  display: block;
-  margin: 5%;
-  width: 50%;
-  border-radius: 5px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-  padding: 20px;
-  justify-self: center;
-  background-color: #ffffff;
-  align-items: center;
-}
-
-#calInfo{
-  width: 10%;
-  height: auto;
-  background-color: white;
-}
-
 #homeSection{
   height:100vh;
 }
@@ -55,14 +29,6 @@ video {
 
 }
 
-
-/* .modal-content {
-  background: linear-gradient(to right, rgb(241, 75, 75),
-          rgb(234, 152, 29), #f7db24);
-  margin-top: 100px;
-} */
-
-
 .card {
   margin-left: 100px;
   margin-top: 100px;
@@ -80,6 +46,7 @@ video {
   height: 100%;
   overflow: hidden;
   -webkit-filter: blur(6px);
+  background-repeat: repeat;
 }
 
 .homelogo {
@@ -90,13 +57,6 @@ video {
   transform: translate(-50%, -50%);
   font-size: 5rem;
 
-}
-
-.cal {
-  display: flex;
-  justify-content: flex-end;
-  width: 30%;
-  height: 30%;
 }
 
 .icon {
@@ -131,16 +91,33 @@ video {
   margin-top: 20%;
 }
 
-.postCard {
+/* .postCard.card {
   text-align: center;
-  background: rgba(0, 0, 0, 0.751);
-  backdrop-filter: saturate(180%) blur(10px);
-  background: transparent;
   margin-top: 200px;
-}
+} */
 
 .bulletins-container {
   width: 100%;
   margin-top: 200px;
+}
+
+.postCard.card {
+  text-align: center;
+  margin-top: 200px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .postCard.card{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(35, 35, 35, 0.539);  
+  }
+  .warning {
+    display: none;
+  }
 }
 
