@@ -24,8 +24,9 @@ const Home = () => {
   
 
   return (
-    // <section id="homeSection">
-    // <Container>
+    <>
+    <section id="homeSection">
+     <Container>
     <>
       <Row>
         <NavbarComponent />
@@ -71,9 +72,11 @@ const Home = () => {
         <Col className="col-12 col-lg-2"></Col>
       </Row>
     </>
-    // </Container>
-    // </section>
+    </Container>
+     </section>
+     </>
   );
+
 };
 
 export default Home;

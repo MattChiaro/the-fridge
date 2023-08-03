@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { ADD_BULLETIN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
+import {FileEarmarkPlus} from 'react-bootstrap-icons'
+import { Link } from 'react-router-dom'
 
 
 const NotePad = () => {
@@ -57,43 +59,11 @@ const handleChange = (e) => {
   });
 
   }
-;
-
-
-// <Modal show={show} onHide={handleClose}>
-//   <Modal.Header closeButton>
-//     <Modal.Title>New Post</Modal.Title>
-//   </Modal.Header>
-//   <Modal.Body>
-//     <Form onSubmit={handleFormSubmit}>
-//       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-//         <Form.Label>Title</Form.Label>
-//         <Form.Control type="text" rows={1}/>
-//       </Form.Group>
-//       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-//         <Form.Label className={`m-0 ${
-//           characterCount === 280 ? 'text-danger' : ''
-//           }`}>Content</Form.Label>
-//         <Form.Control as="textarea" rows={3} />
-//       </Form.Group>
-//       <Form.Select className='mt-4' aria-label="Default select example">
-//         <option>Select desired note location</option>
-//         <option value="1">Bulletin</option>
-//         <option value="2">Urgent Post</option>
-//         <option value="3">Calendar</option>
-//       </Form.Select>
-//       <Form.Label className='mt-4'>Enter the date and time of the event</Form.Label>
-//         <Form.Control type="date" placeholder="Enter date" data-date-format="YYYY/MM/DD" name="startDate" onChange={handleChange} />
-//         <Form.Control type="time" placeholder="Enter time" data-date-format="HH:mm" name="startTime" onChange={handleChange} />
-//       <Button variant="light" type='submit' onClick={handleClose}>
-//         Post
-
 
   return (
     <>
-      <Button variant="dark" onClick={handleShow}>
-        New Post
-      </Button>
+      <Link onClick={handleShow}><FileEarmarkPlus size={48} color='white' className="noteIcon"/>
+      </Link>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
