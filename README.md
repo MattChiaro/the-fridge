@@ -61,3 +61,4 @@ The Fridge is a project by the Dream Team. The Dream Team is partially comprised
 
 ![MDB Image](./client/public/mdb.png)
 
+
