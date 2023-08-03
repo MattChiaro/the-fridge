@@ -1,6 +1,4 @@
-// import Button from 'react-bootstrap/Button';
-import React from "react";
-import Card from "react-bootstrap/Card";
+import {Card, Modal} from "react-bootstrap";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -8,6 +6,10 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
 import * as bootstrap from 'bootstrap';
 import "bootstrap/dist/css/bootstrap.css";
+import { Calendar4 } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+
 
 // global variable for events
 let events = [
@@ -22,6 +24,11 @@ let events = [
 
 
 function CalendarCard() {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   
   // format for events
   // let events = [
@@ -45,36 +52,40 @@ function CalendarCard() {
   
 
   return (
-    <Card 
-    // style={{ width: "100%", height:"100%", margin:'1em' }} 
-    >
-      <Card.Body 
-      // style={{height:"100%"}}
-      >
-        <Card.Title style={{textAlign:"center"}}>Calendar</Card.Title>
-        {/* fullcalendar display */}
-        <FullCalendar
-          plugins={[ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ]}
-          initialView="dayGridMonth"
-          headerToolbar={{
-            start: "prev,next",
-            center: "title",
-            end: "dayGridMonth timeGridWeek"
-          }}
+    <Link onClick={handleShow}><Calendar4 size={38} color='white' className="icon"/>
+    <Modal show={show} onHide={handleClose}>
+    <Modal.Header closeButton>
+      <Modal.Title>Calendar</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>        
+    <Card>
+    <Card.Body>
+    <Card.Title style={{textAlign:"center"}}>Calendar</Card.Title>
+    <FullCalendar
+      plugins={[ dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin ]}
+      initialView="dayGridMonth"
+      headerToolbar={{
+        start: "prev,next",
+        center: "title",
+        end: "dayGridMonth timeGridWeek"
+      }}
 
-          // add events to calendar
-          events = {events}
-          eventDidMount={(info) => {
-            return new bootstrap.Popover(info.el, {
-              title: info.event.title,
-              placement: "auto",
-              customClass: "popoverStyle",
-              contet: info.event.extendedProps.description,
-              html: true,});
-          }}
-        />
-      </Card.Body>
-    </Card>
+      // add events to calendar
+      events = {events}
+      eventDidMount={(info) => {
+        return new bootstrap.Popover(info.el, {
+          title: info.event.title,
+          placement: "auto",
+          customClass: "popoverStyle",
+          contet: info.event.extendedProps.description,
+          html: true,});
+      }}
+    />
+          </Card.Body>
+        </Card>
+    </Modal.Body>
+  </Modal>
+</Link>
   );
 }
 
