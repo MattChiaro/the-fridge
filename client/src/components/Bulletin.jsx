@@ -14,9 +14,7 @@ const Bulletin = () => {
   // }
 
   return (
-     <Card 
-    // style={{ width: "100%",height:"30rem", margin:'1em' }}
-     >
+     <Card className="bulletinCard">
        <Card.Body>
          <Card.Title 
          style={{textAlign:"center"}}>Bulletin</Card.Title>
