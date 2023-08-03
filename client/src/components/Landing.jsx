@@ -108,14 +108,10 @@ const Landing = () => {
       <div >
             <img className="hero-logo" src={loginLogo} onClick={handleShowLogin}></img>
             <p>Click to Login!</p>
-            {/* <Button id='loginBtn' variant="primary" onClick={handleShowLogin}>
-              Login
-            </Button> */}
             </div>
 
         {/* Login Modal */}
         <Modal show={showLogin} onHide={handleLoginClose}>
-            {/* <Modal.Content  className='login'/> */}
           <Modal.Title className='flex d-flex justify-content-center'><img src={logo} alt="logo" /></Modal.Title>
           <Modal.Body>
             <Form noValidate validated={validated} onSubmit={handleLoginFormSubmit}>
