@@ -15,7 +15,6 @@ module.exports = {
 
         if (!token) {
             return req;
-            // return res.status(401).send('Access denied. No token provided.');
         }
 
         // if token can be verified, add the decoded user's data to the request so it can be accessed in the resolver
@@ -25,7 +24,6 @@ module.exports = {
             // next();
         } catch {
             console.log("Invalid token");
-            // res.status(400).send('Invalid token.');
         }
 
         // return the request object so it can be passed to the resolver as `context`
