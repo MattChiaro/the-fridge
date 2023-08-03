@@ -43,7 +43,7 @@ export default function ProfileStatistics() {
   return (
     <div style={{ background: '#FFCC80' }}>
       <div style={{ marginLeft: '10px' }}>
-        <Link to='/home'><House size={38} color='black' marginTop='10px'/></Link>
+        <Link to='/home'><House size={38} color='black'/></Link>
       </div>
       <MDBContainer className="container py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">

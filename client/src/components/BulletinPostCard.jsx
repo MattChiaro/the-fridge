@@ -30,8 +30,8 @@ const BulletinPostCard = () => {
         <div className='m-5'>
             <Row className='bulletins-container'>
                 {data.bulletins.map(bulletin => (
-                    <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
-                        <Card className='postCard' key={bulletin._id}>
+                    <Col xs={12} sm={6} md={4} lg={3} className="mb-4" key={bulletin._id} >
+                        <Card className='postCard'>
                             <Card.Body >
                                 <Card.Title style={{textAlign:"center"}}>{bulletin.title}</Card.Title>
                                 <Card.Text>
