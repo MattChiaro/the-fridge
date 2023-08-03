@@ -57,8 +57,3 @@ The Fridge is a project by the Dream Team. The Dream Team is partially comprised
 * [Nodejs](https://nodejs.org/en/)
 * [FullCalendar.io](https://fullcalendar.io/)
 
-
-
-![MDB Image](./client/public/mdb.png)
-
-
