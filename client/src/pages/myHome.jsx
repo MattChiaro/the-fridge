@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Modal, Card } from "react-bootstrap";
+import React from "react";
 import Auth from "../utils/auth";
 import background from '../assets/homeBack.jpeg'
 import logo from '../assets/logo300.png';
@@ -8,15 +7,7 @@ import { Link } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.css";
 import Note from '../components/newNote';
 import CalendarCard from "../components/calendarCard";
-// global variable for events
-let events = [
-    {
-      title: 'All Day Event',
-      start: '2023-08-15',
-      end: '2023-08-15',
-      description: 'description for All Day Event',
-    }
-  ]
+import Bulletin from "../components/Bulletin";
 
 const Home = () => {
 
@@ -24,12 +15,6 @@ const Home = () => {
         event.preventDefault();
         Auth.logout();
       }
-
-
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
 return (
       <>
@@ -45,6 +30,7 @@ return (
 </div>
 <Note />
 <CalendarCard />
+<Bulletin />
 </>
 )};
 
