@@ -89,3 +89,17 @@ video {
   margin-left: 94%;
   margin-top: 20%;
 }
+
+.postCard {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.751);
+  backdrop-filter: saturate(180%) blur(10px);
+  background: transparent;
+  margin-top: 200px;
+}
+
+.bulletins-container {
+  width: 100%;
+  margin-top: 200px;
+}
+
